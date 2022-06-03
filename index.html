@@ -10,13 +10,17 @@
 <body>
 
     <div class="buttonContainer">
-        <input type="button" value="webworker" id="worker">
-        <input type="button" value="change background" id="notWorker">
+
+        <input type="button" value="Worker 1" id="worker" data-display="counterOne">
+        <input type="button" value="Worker 2" id="workerTwo" data-display="counterTwo">
+        <input type="button" value="Main App" id="notWorker" data-display="counterThree">
+    
     </div>
 
     <div class="counterContainer">
         <p id="counterOne">Placeholder</p>
         <p id="counterTwo">Placeholder2</p>
+        <p id="counterThree">Placeholder3</p>
     </div>
 
     <script src="app.js"></script>
