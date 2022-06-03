@@ -8,6 +8,11 @@ myWorker.onmessage = function(message){
     // Information from the worker is passed, as an object, and then I select what pieces I want
 
     document.getElementById(message['data']['id']).innerHTML = message['data']['count'];
+
+    if (message['data']['count'] === 10){
+        console.log('needs to be removed');
+        setTimeout(() => document.getElementById(message['data']['id']).remove(), 5000);
+    }
 }
 
 function counterCreate(){
