@@ -13,7 +13,7 @@ self.onmessage = function(message){
         console.log(counter);
 
         self.sendMessage({
-            'counter': counter,
+            'count': counter,
             'id': elementId
         });
         counter += 1
