@@ -15,6 +15,10 @@ myWorker.onmessage = function(message){
     }
 }
 
+myWorker.onerror = function(e){
+    console.log(e);
+}
+
 function counterCreate(){
     let counterContainer = document.getElementById('counterContainer');
     let counterNumber = counterContainer.childElementCount;

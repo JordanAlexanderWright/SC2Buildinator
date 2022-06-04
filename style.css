@@ -1,8 +1,26 @@
-.counterContainer {
+#counterContainer {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0;
+    max-width: 50%
+}
+
+#counterContainer p {
+    margin: .5em;
+    padding-top: 0;
+    color: red;
+    border-color: black;
+    border-width: 1px;
+    border-style: inset;
+
+    text-align:center;
+    box-shadow: 2em;
+
+    max-width: 10em;
 }
 
 .buttonContainer {
     display: flex;
+    flex-direction: row;
 }
