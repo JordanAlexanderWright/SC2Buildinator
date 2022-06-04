@@ -49,3 +49,34 @@ makeCounterButton.addEventListener('click', counterCreate);
 function sendMessage(id){
     myWorker.postMessage(id)
 }
+
+let testData = {
+    'unit': 'scv',
+    'time': '00:05'
+
+}
+
+let today = new Date();
+
+console.log(today.getTime())
+
+let startTime = today.getTime()
+let seconds = 10
+let miliSeconds = seconds * 1000
+
+endTime = startTime + miliSeconds
+
+console.log(startTime, endTime);
+
+
+const myTest = setInterval(function(){
+
+    let timeNow = new Date().today
+    if ((new Date().getTime()) < endTime){
+        console.log('continuing');
+        console.log(new Date().getTime());
+    } else if ((new Date().getTime()) >= endTime){
+        console.log('Success');
+        clearInterval(myTest);
+    }
+}, 100)
