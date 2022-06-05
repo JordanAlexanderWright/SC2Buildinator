@@ -50,9 +50,20 @@ function sendMessage(id){
     myWorker.postMessage(id)
 }
 
-let testData = {
-    'unit': 'scv',
-    'time': '00:05'
+function makeSCV() {
+
+    let scvFigure = document.createElement('figure');
+
+    let scvIMG = document.createElement('img');
+    scvIMG.src = `/resources/icons/SCV.png`
+
+    let scvLabel = document.createElement('figcaption');
+    scvLabel.innerHTML = 'SCV';
+
+    scvFigure.append(scvIMG);
+    scvFigure.append(scvLabel);
+
+    document.getElementById('counterContainer').append(scvFigure);
 
 }
 
@@ -68,15 +79,35 @@ endTime = startTime + miliSeconds
 
 console.log(startTime, endTime);
 
+// This is a test function that I am going to be using to set the workers into motion. This will check the timing over and over again until 
+// It is time for the worker to pass data back to the main application script. 
+// const myTest = setInterval(function(){
 
-const myTest = setInterval(function(){
+//     if ((new Date().getTime()) < endTime){
+//         console.log('continuing');
+//         console.log(new Date().getTime());
+//     } else if ((new Date().getTime()) >= endTime){
+//         console.log('Success');
+//         clearInterval(myTest);
+//     }
+// }, 100)
 
-    let timeNow = new Date().today
-    if ((new Date().getTime()) < endTime){
-        console.log('continuing');
-        console.log(new Date().getTime());
-    } else if ((new Date().getTime()) >= endTime){
-        console.log('Success');
-        clearInterval(myTest);
-    }
-}, 100)
+
+
+
+let testData = {
+    '1': {'unit': 'scv', 'time': '00:05'},
+    '2': {'unit': 'scv', 'time': '00:20'}
+}
+
+console.log(testData['1'])
+console.log(Object.keys(testData));
+
+let someData = (Object.keys(testData));
+
+console.log(someData);
+console.log(typeof(someData));
+console.log(someData.length)
+
+makeSCV()
+makeSCV()

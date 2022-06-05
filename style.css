@@ -24,3 +24,15 @@
     display: flex;
     flex-direction: row;
 }
+
+/* These styles will apply to my countdown icons (figure/figcaptions) */
+
+figure {
+    text-align: center;
+    max-width: fit-content;
+}
+
+figure img{
+    height: 100px;
+    width: 100px;
+}
