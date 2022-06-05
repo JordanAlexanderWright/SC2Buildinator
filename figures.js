@@ -16,7 +16,7 @@ class figureCreator{
     figureLabel.innerHTML = 'SCV';
 
     let figureTimer = document.createElement('figcaption');
-    figureTimer.innerHTML = 'Placeholder'
+    figureTimer.innerHTML = 'Timer'
     figureTimer.id = timerId
 
     newFigure.append(figureImage);

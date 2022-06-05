@@ -1,6 +1,3 @@
-// function onmessage(message){
-//     console.log(message);
-// }
 
 self.onmessage = function(message){
 
