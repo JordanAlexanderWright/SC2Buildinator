@@ -2,6 +2,8 @@
 
 const myWorker = new Worker('worker.js');
 let figureTool = new figureCreator();
+const terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
+                    'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine']
 
 
 // this Sets up what will happen when I recieve data from my worker
@@ -22,17 +24,50 @@ myWorker.onerror = function(e){
     console.log(e);
 }
 
+// function checkRadio(){
+//     if(document.getElementById('unit').checked){
+//         console.log('unit is checked');
+//         console.log(document.getElementById('building').checked)
+//         console.log(document.getElementById('unit').value);
+//     } else if (document.getElementById('building').checked){
+//         console.log('Building is checked');
+//     }
+// }
+
+// document.getElementById('objectSelector').addEventListener(`click`, (e) => console.log(e.target.value))
+
+// creationData = {'type':'unit', 'whatToBuild': 'marine', 'time', '25seconds'}
+
 function counterCreate(){
     let counterContainer = document.getElementById('counterContainer');
     let counterNumber = counterContainer.childElementCount;
 
+    let creationData = {};
+    creationData['whatToBuild']= document.getElementById('objectSelector').value
+
+    switch(true) {
+        case document.getElementById('unit').checked:
+            console.log('yepppp');
+            creationData[`type`] = document.getElementById('unit').value ;
+            break;
+        case document.getElementById('building').checked:
+            creationData[`type`] = document.getElementById('building').value
+            break;
+        case document.getElementById('upgrade').checked:
+            creationData[`type`] = document.getElementById('upgrade').value
+            break;
+    }
+
+    console.log(creationData);
+    console.log(creationData['whatToBuild']);
     // I'm using counter number to be able to count the number of counters that are in the collection
     // I then use that number to assign an id to the counter so that I can pass that to my worker to manipulate it. 
 
     // Creating the figure, then starting the worker up. SCV is a placeholder, will be manipulated later
 
-    figureTool.makeFigure('SCV', (counterNumber + 1));
-    sendMessage((counterNumber + 1))
+    figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
+    // figureTool.makeFigure('SCV', (counterNumber + 1));
+    // sendMessage((counterNumber + 1))
 }
 
 // Sends the ID of the timer to manipulate over to the Web Worker
@@ -74,11 +109,12 @@ console.log(startTime, endTime);
 
 
 
-
 let testData = {
     '1': {'unit': 'scv', 'time': '00:05'},
     '2': {'unit': 'scv', 'time': '00:20'}
 }
+
+// document.getElementById(`test`).addEventListener(`click`, checkRadio);
 
 console.log(testData['1'])
 console.log(Object.keys(testData));
