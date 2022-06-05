@@ -11,7 +11,7 @@ myWorker.onmessage = function(message){
 
     if (message['data']['count'] === 10){
         console.log('needs to be removed');
-        setTimeout(() => document.getElementById(message['data']['id']).remove(), 5000);
+        setTimeout(() => document.getElementById(message['data']['id']).parentElement.remove(), 5000);
     }
 }
 
@@ -26,14 +26,17 @@ function counterCreate(){
     // I'm using counter number to be able to count the number of counters that are in the collection
     // I then use that number to assign an id to the counter so that I can pass that to my worker to manipulate it. 
 
-    let counter = document.createElement('p')
-    counter.innerHTML = '0'
-    counter.id = counterNumber + 1
+   
+    // let counter = document.createElement('p')
+    // counter.innerHTML = '0'
+    // counter.id = counterNumber + 1
 
-    console.log(counter);
-    counterContainer.appendChild(counter);
+    // console.log(counter);
+    // counterContainer.appendChild(counter);
 
-    sendMessage(counter.id)
+    makeSCV((counterNumber + 1))
+
+    sendMessage((counterNumber + 1))
 }
 
 
@@ -50,7 +53,10 @@ function sendMessage(id){
     myWorker.postMessage(id)
 }
 
-function makeSCV() {
+// Need to pass an ID that is created by counting the number of figures in my timer collection. 
+// That ID is passed to the timmer figcaption so that it can be manipulated. 
+
+function makeSCV(id) {
 
     let scvFigure = document.createElement('figure');
 
@@ -60,8 +66,13 @@ function makeSCV() {
     let scvLabel = document.createElement('figcaption');
     scvLabel.innerHTML = 'SCV';
 
+    let scvTimer = document.createElement('figcaption');
+    scvTimer.innerHTML = 'Placeholder'
+    scvTimer.id = id
+
     scvFigure.append(scvIMG);
     scvFigure.append(scvLabel);
+    scvFigure.append(scvTimer)
 
     document.getElementById('counterContainer').append(scvFigure);
 
@@ -109,5 +120,5 @@ console.log(someData);
 console.log(typeof(someData));
 console.log(someData.length)
 
-makeSCV()
-makeSCV()
+// makeSCV()
+// makeSCV()
