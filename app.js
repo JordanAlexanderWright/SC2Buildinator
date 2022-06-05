@@ -1,4 +1,7 @@
+// Creating a worker, and a figure handler from my figure class in figures.js
+
 const myWorker = new Worker('worker.js');
+let figureTool = new figureCreator();
 
 
 // this Sets up what will happen when I recieve data from my worker
@@ -26,9 +29,9 @@ function counterCreate(){
     // I'm using counter number to be able to count the number of counters that are in the collection
     // I then use that number to assign an id to the counter so that I can pass that to my worker to manipulate it. 
 
-    // Creating the figure, then starting the worker up
+    // Creating the figure, then starting the worker up. SCV is a placeholder, will be manipulated later
 
-    makeSCV((counterNumber + 1))
+    figureTool.makeFigure('SCV', (counterNumber + 1));
     sendMessage((counterNumber + 1))
 }
 
@@ -109,6 +112,3 @@ console.log(Object.keys(testData));
 
 let someData = (Object.keys(testData));
 
-let figureHero = new figureCreator
-
-figureHero.makeFigure('SCV', 1);
