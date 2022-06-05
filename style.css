@@ -13,6 +13,10 @@
     flex-direction: row;
 }
 
+.typeSelector{
+    margin-bottom: 25px;
+}
+
 /* These styles will apply to my countdown icons (figure/figcaptions) */
 
 figure {

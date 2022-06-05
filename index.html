@@ -10,10 +10,29 @@
 
 <body>
 
+    <form action="" class="buildMaker">
+        
+        <div class="typeSelector">
+
+            <p>Please select a type:</p>
+
+            <input type='radio' value="unit" id="unit" name="typeSelector" checked>
+            <label for="unit">Unit</label>
+
+            <input type='radio' value="building" id="building" name="typeSelector" disabled>
+            <label for="building">Building</label>
+
+            <input type='radio' value="upgrade" id="upgrade" name="typeSelector" disabled>
+            <label for="upgrade">Upgrade</label>
+        </div>
+
+        <input type="text" name="" id="objectSelector" placeholder="Please input a unit..">
+    </form>
+
     <div class="buttonContainer">
 
         <input type="button" value="Make counter" id="makeCounter">
-    
+        <input type="button" value="testing" id="test">
     </div>
 
     <div id="counterContainer">
