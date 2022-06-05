@@ -5,6 +5,7 @@ let figureTool = new figureCreator();
 const terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
                     'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine']
 
+console.log(terranUnits.includes('scv'));
 
 // this Sets up what will happen when I recieve data from my worker
 myWorker.onmessage = function(message){
@@ -24,62 +25,63 @@ myWorker.onerror = function(e){
     console.log(e);
 }
 
-// function checkRadio(){
-//     if(document.getElementById('unit').checked){
-//         console.log('unit is checked');
-//         console.log(document.getElementById('building').checked)
-//         console.log(document.getElementById('unit').value);
-//     } else if (document.getElementById('building').checked){
-//         console.log('Building is checked');
-//     }
-// }
+// This function validates the users input
 
-// document.getElementById('objectSelector').addEventListener(`click`, (e) => console.log(e.target.value))
-
-// creationData = {'type':'unit', 'whatToBuild': 'marine', 'time', '25seconds'}
-
-function counterCreate(){
-    let counterContainer = document.getElementById('counterContainer');
-    let counterNumber = counterContainer.childElementCount;
+function userInputHandling(){
+    let userInput = document.getElementById('objectSelector').value.toLowerCase();
+    let parsedInput = userInput.split(' ').join('');
+    console.log(parsedInput);
 
     let creationData = {};
-    creationData['whatToBuild']= document.getElementById('objectSelector').value
 
-    switch(true) {
-        case document.getElementById('unit').checked:
-            console.log('yepppp');
-            creationData[`type`] = document.getElementById('unit').value ;
-            break;
-        case document.getElementById('building').checked:
-            creationData[`type`] = document.getElementById('building').value
-            break;
-        case document.getElementById('upgrade').checked:
-            creationData[`type`] = document.getElementById('upgrade').value
-            break;
+    if(terranUnits.includes(parsedInput)){
+
+        console.log('its valid!');
+        creationData[`whatToBuild`] = parsedInput;
+
+        switch(true) {
+            case document.getElementById('unit').checked:
+                creationData[`type`] = document.getElementById('unit').value;
+                break;
+            case document.getElementById('building').checked:
+                creationData[`type`] = document.getElementById('building').value;
+                break;
+            case document.getElementById('upgrade').checked:
+                creationData[`type`] = document.getElementById('upgrade').value;
+                break;
+        }
+
+    } else {
+        console.log('Not a valid unit, try again');
+        creationData = false;
     }
 
-    console.log(creationData);
-    console.log(creationData['whatToBuild']);
+    return creationData;
+
+}
+
+function createCounter(){
+    let counterContainer = document.getElementById('counterContainer');
+    let counterNumber = counterContainer.childElementCount;
+    let creationData = userInputHandling();
     // I'm using counter number to be able to count the number of counters that are in the collection
     // I then use that number to assign an id to the counter so that I can pass that to my worker to manipulate it. 
 
-    // Creating the figure, then starting the worker up. SCV is a placeholder, will be manipulated later
+    // Creating the figure, then starting the worker up. 
 
-    figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
-    // figureTool.makeFigure('SCV', (counterNumber + 1));
-    // sendMessage((counterNumber + 1))
-}
+    if(creationData){
+        figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
+        myWorker.postMessage((counterNumber + 1));
+    } else {
+        console.log('please check your inputs')
+    }
 
-// Sends the ID of the timer to manipulate over to the Web Worker
-
-function sendMessage(id){
-    myWorker.postMessage(id)
 }
 
 // Placeholder button for testing 
 
 const makeCounterButton = document.getElementById('makeCounter')
-makeCounterButton.addEventListener('click', counterCreate);
+makeCounterButton.addEventListener('click', createCounter);
 
 // Test code
 let today = new Date();
