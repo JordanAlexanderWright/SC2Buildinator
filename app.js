@@ -35,45 +35,18 @@ function counterCreate(){
     sendMessage((counterNumber + 1))
 }
 
-
-const makeCounterButton = document.getElementById('makeCounter')
-makeCounterButton.addEventListener('click', counterCreate);
-
-// function sendMessage(event){
-
-//     // this sends the target button's custom data, linking it to a particular p tag
-//     myWorker.postMessage(event.target.dataset.display);
-// }
+// Sends the ID of the timer to manipulate over to the Web Worker
 
 function sendMessage(id){
     myWorker.postMessage(id)
 }
 
-// Need to pass an ID that is created by counting the number of figures in my timer collection. 
-// That ID is passed to the timmer figcaption so that it can be manipulated. 
+// Placeholder button for testing 
 
-function makeSCV(id) {
+const makeCounterButton = document.getElementById('makeCounter')
+makeCounterButton.addEventListener('click', counterCreate);
 
-    let scvFigure = document.createElement('figure');
-
-    let scvIMG = document.createElement('img');
-    scvIMG.src = `/resources/icons/SCV.png`
-
-    let scvLabel = document.createElement('figcaption');
-    scvLabel.innerHTML = 'SCV';
-
-    let scvTimer = document.createElement('figcaption');
-    scvTimer.innerHTML = 'Placeholder'
-    scvTimer.id = id
-
-    scvFigure.append(scvIMG);
-    scvFigure.append(scvLabel);
-    scvFigure.append(scvTimer)
-
-    document.getElementById('counterContainer').append(scvFigure);
-
-}
-
+// Test code
 let today = new Date();
 
 console.log(today.getTime())
