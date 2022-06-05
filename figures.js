@@ -10,10 +10,10 @@ class figureCreator{
     let newFigure = document.createElement('figure');
 
     let figureImage = document.createElement('img');
-    figureImage.src = `/resources/icons/${unitType}.png`
+    figureImage.src = `/resources/icons/units/${unitType}.png`
 
     let figureLabel = document.createElement('figcaption');
-    figureLabel.innerHTML = 'SCV';
+    figureLabel.innerHTML = `${unitType}`;
 
     let figureTimer = document.createElement('figcaption');
     figureTimer.innerHTML = 'Timer'
