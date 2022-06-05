@@ -1,0 +1,29 @@
+class figureCreator{
+
+    constructor(){
+        this.figureContainer = document.getElementById('counterContainer')
+    }
+
+    
+    makeFigure(unitType, timerId) {
+
+    let newFigure = document.createElement('figure');
+
+    let figureImage = document.createElement('img');
+    figureImage.src = `/resources/icons/${unitType}.png`
+
+    let figureLabel = document.createElement('figcaption');
+    figureLabel.innerHTML = 'SCV';
+
+    let figureTimer = document.createElement('figcaption');
+    figureTimer.innerHTML = 'Placeholder'
+    figureTimer.id = timerId
+
+    newFigure.append(figureImage);
+    newFigure.append(figureLabel);
+    newFigure.append(figureTimer)
+
+    this.figureContainer.append(newFigure);
+
+    }
+}

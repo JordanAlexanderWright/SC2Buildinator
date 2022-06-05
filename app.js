@@ -26,16 +26,9 @@ function counterCreate(){
     // I'm using counter number to be able to count the number of counters that are in the collection
     // I then use that number to assign an id to the counter so that I can pass that to my worker to manipulate it. 
 
-   
-    // let counter = document.createElement('p')
-    // counter.innerHTML = '0'
-    // counter.id = counterNumber + 1
-
-    // console.log(counter);
-    // counterContainer.appendChild(counter);
+    // Creating the figure, then starting the worker up
 
     makeSCV((counterNumber + 1))
-
     sendMessage((counterNumber + 1))
 }
 
@@ -116,9 +109,6 @@ console.log(Object.keys(testData));
 
 let someData = (Object.keys(testData));
 
-console.log(someData);
-console.log(typeof(someData));
-console.log(someData.length)
+let figureHero = new figureCreator
 
-// makeSCV()
-// makeSCV()
+figureHero.makeFigure('SCV', 1);
