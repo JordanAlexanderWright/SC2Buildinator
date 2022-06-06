@@ -87,11 +87,6 @@ function createCounter(){
 
 }
 
-// Placeholder button for testing 
-
-const makeCounterButton = document.getElementById('makeCounter')
-makeCounterButton.addEventListener('click', createCounter);
-
 // Test code
 let today = new Date();
 
