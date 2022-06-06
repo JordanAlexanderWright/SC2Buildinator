@@ -16,6 +16,22 @@ document.getElementById('objectSelector').addEventListener(`keydown`, function(e
     }
 })
 
+// Checks for length in input and prevets if it is over 2 (two digits of minute / seconds)
+
+document.getElementById('minuteSelector').addEventListener(`keydown`, function(e){
+    if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
+        console.log('long');
+        e.preventDefault();
+    } 
+})
+
+document.getElementById('secondSelector').addEventListener(`keydown`,  function(e){
+    if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
+        console.log('long');
+        e.preventDefault();
+    } 
+})
+
 // this Sets up what will happen when I recieve data from my worker
 myWorker.onmessage = function(message){
    
