@@ -5,7 +5,16 @@ let figureTool = new figureCreator();
 const terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
                     'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine']
 
-console.log(terranUnits.includes('scv'));
+
+// Prevent default behavior of input field 
+document.getElementById('objectSelector').addEventListener(`keydown`, function(e){
+    if( e.key === 'Enter'){
+        console.log('hello');
+        e.preventDefault();
+        createCounter();
+        e.target.value = '';
+    }
+})
 
 // this Sets up what will happen when I recieve data from my worker
 myWorker.onmessage = function(message){
@@ -67,7 +76,7 @@ function createCounter(){
     // I'm using counter number to be able to count the number of counters that are in the collection
     // I then use that number to assign an id to the counter so that I can pass that to my worker to manipulate it. 
 
-    // Creating the figure, then starting the worker up. 
+    // Creating the figure then starting the worker up, if it passed validation 
 
     if(creationData){
         figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
@@ -122,4 +131,3 @@ console.log(testData['1'])
 console.log(Object.keys(testData));
 
 let someData = (Object.keys(testData));
-
