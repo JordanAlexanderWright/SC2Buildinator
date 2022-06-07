@@ -20,7 +20,7 @@ document.getElementById('objectSelector').addEventListener(`keydown`, function(e
 
 document.getElementById('minuteSelector').addEventListener(`keydown`, function(e){
     console.log(e.code);
-    if ((e.target.value.length >= 2) && (e.code != 'Backspace') || (e.code === 'Period')){
+    if ((e.target.value.length >= 2) && (e.code != 'Backspace') || (e.code === 'Period') || (e.code === 'Minus')){
         e.preventDefault();
     }
 })
@@ -34,13 +34,13 @@ document.getElementById('minuteSelector').addEventListener(`keyup`, function(e){
 })
 
 document.getElementById('secondSelector').addEventListener(`keydown`,  function(e){
-    if ((e.target.value.length >= 2) && (e.code != 'Backspace') || (e.code === 'Period')){
+    if ((e.target.value.length >= 2) && (e.code != 'Backspace') || (e.code === 'Period') || (e.code === 'Minus')){
         e.preventDefault();
     } 
 })
 
 document.getElementById('secondSelector').addEventListener(`keyup`, function(e){
-    if (parseInt(e.target.value) > 59 || parseInt(e.target.value) < 0){
+    if (parseInt(e.target.value) > 59){
         e.target.value = '';
         console.log('Invalid Seconds Input, Please Try Again');
     }
