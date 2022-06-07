@@ -19,7 +19,6 @@ document.getElementById('objectSelector').addEventListener(`keydown`, function(e
 // Checks for length in input and prevets if it is over 2 (two digits of minute / seconds). Also prevents decmial points
 
 document.getElementById('minuteSelector').addEventListener(`keydown`, function(e){
-    console.log(e.code);
     if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
         e.preventDefault();
     } if ((e.code.includes('Digit') === false) && (e.code.includes('Backspace') === false)){
@@ -37,7 +36,6 @@ document.getElementById('minuteSelector').addEventListener(`keyup`, function(e){
 })
 
 document.getElementById('secondSelector').addEventListener(`keydown`,  function(e){
-    console.log(e.code);
     if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
         e.preventDefault();
     } if ((e.code.includes('Digit') === false) && (e.code.includes('Backspace') === false)){

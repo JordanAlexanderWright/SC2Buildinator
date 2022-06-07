@@ -1,3 +1,15 @@
+.userInputs{
+    display: grid;
+    max-width: 30%;
+    grid-template-columns: 50% 50%;
+    background-color:lightgreen;
+
+}
+
+#objectSelector{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
 #counterContainer {
     display: flex;
     flex-wrap: wrap;
@@ -7,7 +19,6 @@
     max-width: 75%
 }
 
-
 .buttonContainer {
     display: flex;
     flex-direction: row;
@@ -15,6 +26,10 @@
 
 .typeSelector{
     margin-bottom: 25px;
+}
+
+#minuteSelector, #secondSelector{
+    max-width: 50px;
 }
 
 /* These styles will apply to my countdown icons (figure/figcaptions) */
@@ -27,4 +42,21 @@ figure {
 figure img{
     height: 100px;
     width: 100px;
+}
+
+.buildOrerList table {
+    min-width: 150px;
+}
+
+.buildOrderList tr {
+    background-color: lightblue;
+    text-align: center;
+}
+
+.buildOrderList th {
+    margin-left: 20px;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    min-width: 150px;
 }
