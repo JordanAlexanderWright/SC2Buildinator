@@ -16,21 +16,36 @@ document.getElementById('objectSelector').addEventListener(`keydown`, function(e
     }
 })
 
-// Checks for length in input and prevets if it is over 2 (two digits of minute / seconds)
+// Checks for length in input and prevets if it is over 2 (two digits of minute / seconds). Also prevents decmial points
 
 document.getElementById('minuteSelector').addEventListener(`keydown`, function(e){
-    if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
-        console.log('long');
+    console.log(e.code);
+    if ((e.target.value.length >= 2) && (e.code != 'Backspace') || (e.code === 'Period')){
         e.preventDefault();
-    } 
+    }
+})
+
+// Validates minute field, making sure it is < 60
+document.getElementById('minuteSelector').addEventListener(`keyup`, function(e){
+    if (parseInt(e.target.value) > 59){
+        e.target.value = '';
+        console.log('Invalid Minutes Input, Please Try Again');
+    }
 })
 
 document.getElementById('secondSelector').addEventListener(`keydown`,  function(e){
-    if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
-        console.log('long');
+    if ((e.target.value.length >= 2) && (e.code != 'Backspace') || (e.code === 'Period')){
         e.preventDefault();
     } 
 })
+
+document.getElementById('secondSelector').addEventListener(`keyup`, function(e){
+    if (parseInt(e.target.value) > 59 || parseInt(e.target.value) < 0){
+        e.target.value = '';
+        console.log('Invalid Seconds Input, Please Try Again');
+    }
+})
+
 
 // this Sets up what will happen when I recieve data from my worker
 myWorker.onmessage = function(message){
