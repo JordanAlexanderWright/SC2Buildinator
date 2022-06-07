@@ -20,9 +20,12 @@ document.getElementById('objectSelector').addEventListener(`keydown`, function(e
 
 document.getElementById('minuteSelector').addEventListener(`keydown`, function(e){
     console.log(e.code);
-    if ((e.target.value.length >= 2) && (e.code != 'Backspace') || (e.code === 'Period') || (e.code === 'Minus')){
+    if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
         e.preventDefault();
-    }
+    } if ((e.code.includes('Digit') === false) && (e.code.includes('Backspace') === false)){
+        console.log('prevent')
+        e.preventDefault();
+    }     
 })
 
 // Validates minute field, making sure it is < 60
@@ -34,9 +37,13 @@ document.getElementById('minuteSelector').addEventListener(`keyup`, function(e){
 })
 
 document.getElementById('secondSelector').addEventListener(`keydown`,  function(e){
-    if ((e.target.value.length >= 2) && (e.code != 'Backspace') || (e.code === 'Period') || (e.code === 'Minus')){
+    console.log(e.code);
+    if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
         e.preventDefault();
-    } 
+    } if ((e.code.includes('Digit') === false) && (e.code.includes('Backspace') === false)){
+        console.log('prevent')
+        e.preventDefault();
+    }     
 })
 
 document.getElementById('secondSelector').addEventListener(`keyup`, function(e){
@@ -157,3 +164,16 @@ console.log(testData['1'])
 console.log(Object.keys(testData));
 
 let someData = (Object.keys(testData));
+
+
+function testingStuff(data){
+    console.log(parseInt(data))
+    if(isNaN(parseInt(data))){
+        return('That sucked');
+    }else {
+        return('That worked');
+    }
+}
+
+console.log(testingStuff('bl'))
+
