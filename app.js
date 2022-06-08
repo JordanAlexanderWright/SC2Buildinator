@@ -1,11 +1,11 @@
 // Creating a worker, and a figure handler from my figure class in figures.js
 
 const myWorker = new Worker('worker.js');
+document.getElementById('makeCounter').addEventListener('click', createCounter);
 let figureTool = new figureCreator();
 const terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
-                    'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine']
-
-
+                    'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
+                
 // Prevent default behavior of input field 
 document.getElementById('objectSelector').addEventListener(`keydown`, function(e){
     if( e.key === 'Enter'){
@@ -123,6 +123,8 @@ function createCounter(){
 
 }
 
+
+document.getElementById('getInputData').addEventListener('click', figureTool.getData);
 // Test code
 let today = new Date();
 

@@ -26,4 +26,42 @@ class figureCreator{
     this.figureContainer.append(newFigure);
 
     }
+
+    getData(){
+
+       let minutes = document.getElementById('minuteSelector').value;
+       let seconds = document.getElementById('secondSelector').value;
+
+       let time = `${minutes}:${seconds}`
+
+       let supply = document.getElementById('supplySelector').value;
+       let production = document.getElementById('objectSelector').value;
+
+       let tableRow = document.createElement('tr');
+
+       let productionData = document.createElement('td');
+       productionData.innerHTML =  production;
+
+       let supplyData = document.createElement('td');
+       supplyData.innerHTML = supply
+
+       let timeData = document.createElement('td');
+       timeData.innerHTML = time;
+
+       let deleteButton = document.createElement('td');
+       let deleteLink = document.createElement('a');        
+       deleteLink.href="#";
+       deleteLink.innerHTML = "x"
+       deleteButton.append(deleteLink);
+
+       // Creating an array of elements to iterate over + appending to new row
+
+       let createdElements = [productionData, supplyData, timeData, deleteButton]
+       createdElements.forEach((data) => tableRow.append(data))
+        
+        // appending new row to table
+
+       document.getElementById('buildOrderTable').append(tableRow);
+
+    }
 }

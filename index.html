@@ -24,19 +24,21 @@
 
             <input type='radio' value="upgrade" id="upgrade" name="typeSelector" disabled>
             <label for="upgrade">Upgrade</label>
+
         </div>
 
         <div class="userInputs">
+
             <input type="text" name="" id="objectSelector" placeholder="Please input a unit...">
             
             <label for="minuteSelector">Minutes:</label>
-            <input type="number" id="minuteSelector" placeholder="mm" maxlength="2" max="59" name="minuteSelector">
+            <input type="number" id="minuteSelector" placeholder="" maxlength="2" max="59" name="minuteSelector">
             
             <label for="secondSelector">Seconds:</label>
-            <input type="number" id="secondSelector" placeholder="ss" maxlength="2" max="59" name="secondSelector">
+            <input type="number" id="secondSelector" placeholder="" maxlength="2" max="59" name="secondSelector">
             
             <label for="supplySelector">Supply Count:</label>
-            <input type="number" id="supplySelector" placeholder="Input Supply Count..." max="200" name="supplySelector">
+            <input type="number" id="supplySelector" placeholder="" max="200" name="supplySelector">
             
         </div>
       
@@ -45,6 +47,7 @@
     <div class="buttonContainer">
 
         <input type="button" value="Make counter" id="makeCounter">
+        <input type="button" value="GetData" id = 'getInputData'>
     </div>
 
     <div id="counterContainer">
@@ -52,7 +55,7 @@
     </div>
 
     <div class="buildOrderList">
-        <table>
+        <table id="buildOrderTable">
             <tr>
                 <th>Building</th>
                 <th>Supply Count</th>
@@ -63,7 +66,7 @@
                 <td>Supply Depot</td>
                 <td>14</td>
                 <td>0:16</td>
-                <td><a href="" class="deleteButton">x</a></td>
+                <td><a href="#" class="deleteButton">x</a></td>
             </tr>
         </table>
     </div>
