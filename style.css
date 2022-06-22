@@ -11,6 +11,7 @@
     grid-column-start: 1;
     grid-column-end: 3;
 }
+
 #counterContainer {
     display: flex;
     flex-wrap: wrap;

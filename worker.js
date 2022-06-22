@@ -19,7 +19,6 @@ self.onmessage = function(message){
             clearInterval(myInterval);
         }
     }, 1000);
-
 }
 
 sendMessage = function(count){
