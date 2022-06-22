@@ -125,6 +125,22 @@ function createCounter(){
 
 
 document.getElementById('getInputData').addEventListener('click', figureTool.getData);
+
+
+// Getting the build order table then
+// Adding functionality to the delete buttons.
+
+document.getElementById('buildOrderTable').addEventListener('click', function(e){
+    
+    console.log(e.target);
+
+    if (e.target.classList.contains('deleteButton')) {
+        console.log(e.target.parentElement.parentElement);
+        e.target.parentElement.parentElement.remove();
+
+    }
+})
+
 // Test code
 let today = new Date();
 
@@ -176,4 +192,10 @@ function testingStuff(data){
 }
 
 console.log(testingStuff('bl'))
+
+let someVariable = '2'
+
+someVariable = +someVariable
+console.log(typeof(someVariable));
+
 

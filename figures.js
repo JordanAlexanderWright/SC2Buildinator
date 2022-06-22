@@ -52,6 +52,8 @@ class figureCreator{
        let deleteLink = document.createElement('a');        
        deleteLink.href="#";
        deleteLink.innerHTML = "x"
+       deleteLink.classList.add('deleteButton');
+       
        deleteButton.append(deleteLink);
 
        // Creating an array of elements to iterate over + appending to new row
@@ -62,6 +64,5 @@ class figureCreator{
         // appending new row to table
 
        document.getElementById('buildOrderTable').append(tableRow);
-
     }
 }
