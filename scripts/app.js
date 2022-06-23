@@ -3,9 +3,7 @@
 const myWorker = new Worker('../scripts/worker.js');
 document.getElementById('makeCounter').addEventListener('click', createCounter);
 let figureTool = new figureCreator();
-// const terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
-//                     'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
-                
+
 // this Sets up what will happen when I recieve data from my worker
 myWorker.onmessage = function(message){
    
@@ -35,7 +33,7 @@ function createCounter(){
     let counterNumber = counterContainer.childElementCount;
 
     // Tests to see if data is valid, and creates a data object if it is. 
-    let creationData = figureCreator.figureDatahandling();
+    let creationData = figureTool.figureDataHandling();
     
     // Creating the figure then starting the worker up, if it passed validation 
 
@@ -43,28 +41,23 @@ function createCounter(){
         figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
         myWorker.postMessage((counterNumber + 1));
     } else {
-        console.log('please check your inputs')
+        console.log('please check your inputs');
     }
 
 }
 
-
 document.getElementById('getInputData').addEventListener('click', figureTool.getData);
 
-
 // Getting the build order table then
-// Adding functionality to the delete buttons.
+// Adding functionality to the delete buttons with event bubbling.
 
 document.getElementById('buildOrderTable').addEventListener('click', function(e){
-    
-    console.log(e.target);
 
     if (e.target.classList.contains('deleteButton')) {
         console.log(e.target.parentElement.parentElement);
         e.target.parentElement.parentElement.remove();
-
     }
-})
+});
 
 // Test code
 let today = new Date();
@@ -122,5 +115,4 @@ let someVariable = '2'
 
 someVariable = +someVariable
 console.log(typeof(someVariable));
-
 

@@ -6,7 +6,6 @@ class figureCreator{
         'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
     }
 
-
     makeFigure(unitType, timerId) {
 
         let newFigure = document.createElement('figure');
@@ -68,6 +67,7 @@ class figureCreator{
 
     }
 
+  
     getData(){
 
        
