@@ -1,9 +1,10 @@
 class figureCreator{
 
     constructor(){
-        this.figureContainer = document.getElementById('counterContainer')
+        this.figureContainer = document.getElementById('counterContainer');
         this.terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
         'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
+        this.tableRowCounter = 1;
     }
 
     makeFigure(unitType, timerId) {
@@ -87,14 +88,20 @@ class figureCreator{
             let time = `${minutes}:${seconds}`;
             let tableRow = document.createElement('tr');
 
+            // Counter to be able to access this data by it's class. 
+            tableRow.classList.add(`tableRow-${this.tableRowCounter}`)
+
             let productionData = document.createElement('td');
             productionData.innerHTML =  production;
+            productionData.classList.add('production')
 
             let supplyData = document.createElement('td');
-            supplyData.innerHTML = supply
+            supplyData.innerHTML = supply;
+            supplyData.classList.add('supply');
 
             let timeData = document.createElement('td');
             timeData.innerHTML = time;
+            timeData.classList.add('time');
 
             let deleteButton = document.createElement('td');
             let deleteLink = document.createElement('a');        

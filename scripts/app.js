@@ -61,6 +61,73 @@ document.getElementById('buildOrderTable').addEventListener('click', function(e)
     }
 });
 
+function makeFormFigure(){
+    console.log('MAKING IT');
+
+    let testRow = document.getElementById(`tableRow-1`);
+    const myElement = testRow;
+    let myData = {};
+
+    // Loops through the table row children, and put their information into an object
+    // values are [production, supply, time]. -1 prevents delete button from being added. 
+
+    for (let i = 0; i < myElement.children.length - 1; i++) {
+        myData[myElement.children[i].classList[0]] = myElement.children[i].innerHTML;
+    }
+
+    // Taking the time data, and splitting it so it can be passed to time. + is the urnary operator, makes it a number. 
+    splitTime = myData['time'].split(":");
+
+    let minutes = +splitTime[0];
+    let seconds = +splitTime[1];
+
+    let production = myData['production'];
+    let parsedProduction = production.toLowerCase();
+    parsedProduction.split(' ').join('');
+
+    console.log(parsedProduction);
+
+    let timeToBuildSeconds = (minutes * 60) + seconds
+
+    let counterContainer = document.getElementById('counterContainer');
+    let counterNumber = counterContainer.childElementCount;
+
+    // Tests to see if data is valid, and creates a data object if it is. 
+    
+    let creationData = {}
+
+    creationData['timeToBuild'] = timeToBuildSeconds;
+    creationData['whatToBuild'] = parsedProduction;
+
+    // Creating the figure then starting the worker up, if it passed validation
+    creationData[`timerId`] = counterNumber + 1;
+
+    if(creationData){
+        figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
+        myWorker.postMessage(creationData);
+    } else {
+        console.log('please check your inputs');
+    }
+    
+}
+    
+
+document.getElementById('formButton').addEventListener('click', makeFormFigure);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Test code
 let today = new Date();
 
@@ -118,3 +185,24 @@ let someVariable = '2'
 someVariable = +someVariable
 console.log(typeof(someVariable));
 
+console.log('poop')
+
+// let testRow = document.getElementById(`tableRow-1`);
+
+// console.log(testRow);
+
+// console.log(testRow.childNodes);
+
+// const myElement = testRow;
+// let myData = {};
+
+// // Loops through the table row children, and put their information into an object
+
+// for (let i = 0; i < myElement.children.length - 1; i++) {
+//   console.log(myElement.children[i].classList);
+//   console.log(myElement.children[i].classList[0]);
+//   myData[myElement.children[i].classList[0]] = myElement.children[i].innerHTML;
+
+// }
+
+// console.log(myData);
