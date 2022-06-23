@@ -3,8 +3,8 @@
 const myWorker = new Worker('../scripts/worker.js');
 document.getElementById('makeCounter').addEventListener('click', createCounter);
 let figureTool = new figureCreator();
-const terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
-                    'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
+// const terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
+//                     'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
                 
 // this Sets up what will happen when I recieve data from my worker
 myWorker.onmessage = function(message){
@@ -26,45 +26,6 @@ myWorker.onerror = function(e){
     console.log(e);
 }
 
-// This function validates the users input, and creates data from it if it's correct.
-
-function userInputHandling(){
-    let userInput = document.getElementById('objectSelector').value.toLowerCase();
-    let parsedInput = userInput.split(' ').join('');
-
-    // Intializing my data object to be returned
-    let creationData = {};
-
-    // Check to see if the unit is actually a unit in the game
-    if(terranUnits.includes(parsedInput)){
-
-        console.log('its valid!');
-        creationData[`whatToBuild`] = parsedInput;
-
-        // This switch statement handles what category of thing is being built (unit, upgrade, building)
-        switch(true) {
-            case document.getElementById('unit').checked:
-                creationData[`type`] = document.getElementById('unit').value;
-                break;
-            case document.getElementById('building').checked:
-                creationData[`type`] = document.getElementById('building').value;
-                break;
-            case document.getElementById('upgrade').checked:
-                creationData[`type`] = document.getElementById('upgrade').value;
-                break;
-        }
-
-    } else {
-
-        // If the object does not exist, creationData is returned as false so that the createCounter() function does not work. 
-        console.log('Not a valid unit, try again');
-        creationData = false;
-    }
-
-    return creationData;
-
-}
-
 function createCounter(){
 
     //  Using counter number to be able to count the number of counters that are in the collection
@@ -74,7 +35,7 @@ function createCounter(){
     let counterNumber = counterContainer.childElementCount;
 
     // Tests to see if data is valid, and creates a data object if it is. 
-    let creationData = userInputHandling();
+    let creationData = figureCreator.figureDatahandling();
     
     // Creating the figure then starting the worker up, if it passed validation 
 
