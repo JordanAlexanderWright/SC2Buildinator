@@ -29,6 +29,7 @@ class figureCreator{
 
     getData(){
 
+       
        let minutes = document.getElementById('minuteSelector').value;
        let seconds = document.getElementById('secondSelector').value;
 
@@ -53,16 +54,27 @@ class figureCreator{
        deleteLink.href="#";
        deleteLink.innerHTML = "x"
        deleteLink.classList.add('deleteButton');
-       
+
        deleteButton.append(deleteLink);
 
        // Creating an array of elements to iterate over + appending to new row
 
        let createdElements = [productionData, supplyData, timeData, deleteButton]
-       createdElements.forEach((data) => tableRow.append(data))
-        
-        // appending new row to table
 
-       document.getElementById('buildOrderTable').append(tableRow);
+      console.log(createdElements.every(element => element === "asdf"))
+      createdElements.forEach(element => console.log(typeof(element)));
+
+    //    if (createdElements.forEach((element) => element){
+    //         console.log('Nope, error')
+    //    } else{
+            
+    //         createdElements.forEach((data) => tableRow.append(data))
+        
+    //         // appending new row to table
+
+    //         document.getElementById('buildOrderTable').append(tableRow);
+    //    }
+    //    createdElements.forEach((data) => tableRow.append(data))
+    
     }
 }
