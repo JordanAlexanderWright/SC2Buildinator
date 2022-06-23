@@ -67,55 +67,59 @@ class figureCreator{
 
     }
 
-  
-    getData(){
+    // Method needs to be defined like this in order to have access to this.properties. 
+    getData = () => {
 
-       
+       //Getting the values of all form elements
        let minutes = document.getElementById('minuteSelector').value;
        let seconds = document.getElementById('secondSelector').value;
-
-       let time = `${minutes}:${seconds}`
-
        let supply = document.getElementById('supplySelector').value;
        let production = document.getElementById('objectSelector').value;
 
-       let tableRow = document.createElement('tr');
+       //Putting values into an array for validation
+       let formValues = [minutes, seconds, supply, production]
 
-       let productionData = document.createElement('td');
-       productionData.innerHTML =  production;
+       // If all entries contain a value + the production object is valid, continue. Else throw an error
+       if (formValues.every(value => value !== "") && this.terranUnits.includes(production)){
 
-       let supplyData = document.createElement('td');
-       supplyData.innerHTML = supply
+            let time = `${minutes}:${seconds}`;
+            let tableRow = document.createElement('tr');
 
-       let timeData = document.createElement('td');
-       timeData.innerHTML = time;
+            let productionData = document.createElement('td');
+            productionData.innerHTML =  production;
 
-       let deleteButton = document.createElement('td');
-       let deleteLink = document.createElement('a');        
-       deleteLink.href="#";
-       deleteLink.innerHTML = "x"
-       deleteLink.classList.add('deleteButton');
+            let supplyData = document.createElement('td');
+            supplyData.innerHTML = supply
 
-       deleteButton.append(deleteLink);
+            let timeData = document.createElement('td');
+            timeData.innerHTML = time;
 
-       // Creating an array of elements to iterate over + appending to new row
+            let deleteButton = document.createElement('td');
+            let deleteLink = document.createElement('a');        
+            deleteLink.href="#";
+            deleteLink.innerHTML = "x"
+            deleteLink.classList.add('deleteButton');
 
-       let createdElements = [productionData, supplyData, timeData, deleteButton]
+            deleteButton.append(deleteLink);
 
-       console.log(createdElements.every(element => element === "asdf"))
-       createdElements.forEach(element => console.log(typeof(element)));
+            // Creating an array of elements to iterate over + appending to new row
 
-    //    if (createdElements.forEach((element) => element){
-    //         console.log('Nope, error')
-    //    } else{
-            
-    //         createdElements.forEach((data) => tableRow.append(data))
-        
-    //         // appending new row to table
+            let createdElements = [productionData, supplyData, timeData, deleteButton]
 
-    //         document.getElementById('buildOrderTable').append(tableRow);
-    //    }
-    //    createdElements.forEach((data) => tableRow.append(data))
-    
-    }
+        //    console.log(createdElements.every(element => element === "asdf"))
+        //    createdElements.forEach(element => console.log(typeof(element)));
+
+
+            createdElements.forEach((data) => tableRow.append(data))
+
+            // appending new row to table
+
+            document.getElementById('buildOrderTable').append(tableRow);
+
+            createdElements.forEach((data) => tableRow.append(data))
+        } else {
+            alert(`There's a problem with your form values.`)
+        }
+    } 
+
 }
