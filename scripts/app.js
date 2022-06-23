@@ -1,14 +1,11 @@
 // Creating a worker, and a figure handler from my figure class in figures.js
 
-const myWorker = new Worker('worker.js');
+const myWorker = new Worker('../scripts/worker.js');
 document.getElementById('makeCounter').addEventListener('click', createCounter);
 let figureTool = new figureCreator();
 const terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
                     'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
                 
-
-
-
 // this Sets up what will happen when I recieve data from my worker
 myWorker.onmessage = function(message){
    
@@ -17,6 +14,8 @@ myWorker.onmessage = function(message){
 
     document.getElementById(message['data']['id']).innerHTML = message['data']['count'];
 
+    // Deletes the figure if the counter is completed, after 5 seconds. 
+    
     if (message['data']['count'] === 10){
         console.log('needs to be removed');
         setTimeout(() => document.getElementById(message['data']['id']).parentElement.remove(), 5000);
@@ -27,7 +26,7 @@ myWorker.onerror = function(e){
     console.log(e);
 }
 
-// This function validates the users input
+// This function validates the users input, and creates data from it if it's correct.
 
 function userInputHandling(){
     let userInput = document.getElementById('objectSelector').value.toLowerCase();
