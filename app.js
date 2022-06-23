@@ -6,50 +6,7 @@ let figureTool = new figureCreator();
 const terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
                     'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
                 
-// Prevent default behavior of input field 
-document.getElementById('objectSelector').addEventListener(`keydown`, function(e){
-    if( e.key === 'Enter'){
-        console.log('hello');
-        e.preventDefault();
-        createCounter();
-        e.target.value = '';
-    }
-})
 
-// Checks for length in input and prevets if it is over 2 (two digits of minute / seconds). Also prevents decmial points
-
-document.getElementById('minuteSelector').addEventListener(`keydown`, function(e){
-    if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
-        e.preventDefault();
-    } if ((e.code.includes('Digit') === false) && (e.code.includes('Backspace') === false)){
-        console.log('prevent')
-        e.preventDefault();
-    }     
-})
-
-// Validates minute field, making sure it is < 60
-document.getElementById('minuteSelector').addEventListener(`keyup`, function(e){
-    if (parseInt(e.target.value) > 59){
-        e.target.value = '';
-        console.log('Invalid Minutes Input, Please Try Again');
-    }
-})
-
-document.getElementById('secondSelector').addEventListener(`keydown`,  function(e){
-    if ((e.target.value.length >= 2) && (e.code != 'Backspace')){
-        e.preventDefault();
-    } if ((e.code.includes('Digit') === false) && (e.code.includes('Backspace') === false)){
-        console.log('prevent')
-        e.preventDefault();
-    }     
-})
-
-document.getElementById('secondSelector').addEventListener(`keyup`, function(e){
-    if (parseInt(e.target.value) > 59){
-        e.target.value = '';
-        console.log('Invalid Seconds Input, Please Try Again');
-    }
-})
 
 
 // this Sets up what will happen when I recieve data from my worker
@@ -75,15 +32,17 @@ myWorker.onerror = function(e){
 function userInputHandling(){
     let userInput = document.getElementById('objectSelector').value.toLowerCase();
     let parsedInput = userInput.split(' ').join('');
-    console.log(parsedInput);
 
+    // Intializing my data object to be returned
     let creationData = {};
 
+    // Check to see if the unit is actually a unit in the game
     if(terranUnits.includes(parsedInput)){
 
         console.log('its valid!');
         creationData[`whatToBuild`] = parsedInput;
 
+        // This switch statement handles what category of thing is being built (unit, upgrade, building)
         switch(true) {
             case document.getElementById('unit').checked:
                 creationData[`type`] = document.getElementById('unit').value;
@@ -97,6 +56,8 @@ function userInputHandling(){
         }
 
     } else {
+
+        // If the object does not exist, creationData is returned as false so that the createCounter() function does not work. 
         console.log('Not a valid unit, try again');
         creationData = false;
     }
@@ -106,12 +67,16 @@ function userInputHandling(){
 }
 
 function createCounter(){
+
+    //  Using counter number to be able to count the number of counters that are in the collection
+    // Then use that number to assign an id to the counter so that I can pass that to my worker to manipulate it. 
+
     let counterContainer = document.getElementById('counterContainer');
     let counterNumber = counterContainer.childElementCount;
-    let creationData = userInputHandling();
-    // I'm using counter number to be able to count the number of counters that are in the collection
-    // I then use that number to assign an id to the counter so that I can pass that to my worker to manipulate it. 
 
+    // Tests to see if data is valid, and creates a data object if it is. 
+    let creationData = userInputHandling();
+    
     // Creating the figure then starting the worker up, if it passed validation 
 
     if(creationData){
