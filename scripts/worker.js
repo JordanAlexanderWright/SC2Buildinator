@@ -2,8 +2,8 @@
 self.onmessage = function(message){
 
     console.log(message);
-    let elementId = message['data'];
-    console.log(elementId);
+    let timerId = message['data'][`timerId`];
+    console.log(timerId);
     let counter = 1;
 
    let myInterval = setInterval(function(){
@@ -11,11 +11,12 @@ self.onmessage = function(message){
 
         self.sendMessage({
             'count': counter,
-            'id': elementId
+            'id': timerId,
+            'timeToBuild': message['data']['timeToBuild']
         });
         counter += 1
 
-        if (counter > 10){
+        if (counter > message['data']['timeToBuild']){
             clearInterval(myInterval);
         }
     }, 1000);

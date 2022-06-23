@@ -14,8 +14,9 @@ myWorker.onmessage = function(message){
 
     // Deletes the figure if the counter is completed, after 5 seconds. 
     
-    if (message['data']['count'] === 10){
+    if (message['data']['count'] === message['data']['timeToBuild']){
         console.log('needs to be removed');
+        console.log('Build it!!!!!')
         setTimeout(() => document.getElementById(message['data']['id']).parentElement.remove(), 5000);
     }
 }
@@ -35,11 +36,12 @@ function createCounter(){
     // Tests to see if data is valid, and creates a data object if it is. 
     let creationData = figureTool.figureDataHandling();
     
-    // Creating the figure then starting the worker up, if it passed validation 
+    // Creating the figure then starting the worker up, if it passed validation
+    creationData[`timerId`] = counterNumber + 1 
 
     if(creationData){
         figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
-        myWorker.postMessage((counterNumber + 1));
+        myWorker.postMessage(creationData);
     } else {
         console.log('please check your inputs');
     }

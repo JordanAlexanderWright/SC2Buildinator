@@ -37,11 +37,13 @@ class figureCreator{
         // Intializing my data object to be returned
         let creationData = {};
 
+        let timeToBuild = 12;
         // Check to see if the unit is actually a unit in the game
         if(this.terranUnits.includes(parsedInput)){
 
             console.log('its valid!');
             creationData[`whatToBuild`] = parsedInput;
+            creationData[`timeToBuild`] = timeToBuild;
 
         // This switch statement handles what category of thing is being built (unit, upgrade, building)
             switch(true) {
