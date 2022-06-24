@@ -73,23 +73,26 @@ class figureCreator{
     // Method needs to be defined like this in order to have access to this.properties. 
     getData = () => {
 
+        console.log('trying');
        //Getting the values of all form elements
        let minutes = document.getElementById('minuteSelector').value;
        let seconds = document.getElementById('secondSelector').value;
        let supply = document.getElementById('supplySelector').value;
        let production = document.getElementById('objectSelector').value;
 
+       let parsedProduction = production.split(' ').join('');
+
        //Putting values into an array for validation
-       let formValues = [minutes, seconds, supply, production]
+       let formValues = [minutes, seconds, supply, parsedProduction]
 
        // If all entries contain a value + the production object is valid, continue. Else throw an error
-       if (formValues.every(value => value !== "") && this.terranUnits.includes(production)){
+       if (formValues.every(value => value !== "") && this.terranUnits.includes(parsedProduction)){
 
             let time = `${minutes}:${seconds}`;
             let tableRow = document.createElement('tr');
 
             // Counter to be able to access this data by it's class. 
-            tableRow.classList.add(`tableRow-${this.tableRowCounter}`)
+            tableRow.id = `tableRow-${this.tableRowCounter}`
 
             let productionData = document.createElement('td');
             productionData.innerHTML =  production;

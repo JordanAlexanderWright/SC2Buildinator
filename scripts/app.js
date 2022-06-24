@@ -64,6 +64,9 @@ document.getElementById('buildOrderTable').addEventListener('click', function(e)
 function makeFormFigure(){
     console.log('MAKING IT');
 
+    let rowCount = document.getElementById('buildOrderTable').children.length;
+
+
     let testRow = document.getElementById(`tableRow-1`);
     const myElement = testRow;
     let myData = {};
@@ -83,7 +86,7 @@ function makeFormFigure(){
 
     let production = myData['production'];
     let parsedProduction = production.toLowerCase();
-    parsedProduction.split(' ').join('');
+    parsedProduction = parsedProduction.split(' ').join('');
 
     console.log(parsedProduction);
 
@@ -206,3 +209,14 @@ console.log('poop')
 // }
 
 // console.log(myData);
+
+function doMyStuff(){
+    let rowCount = document.getElementById('buildOrderTable').children.length;
+
+    console.log(rowCount);
+
+    console.log(document.getElementById('buildOrderTable').children);
+
+}
+let testButton = document.getElementById('testButton');
+testButton.addEventListener('click', doMyStuff);
