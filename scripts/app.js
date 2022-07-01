@@ -222,12 +222,6 @@ let testButton = document.getElementById('testButton');
 testButton.addEventListener('click', doMyStuff);
 
 
-let myData = fetch(`https://jsonplaceholder.typicode.com/users`);
-    
-console.log(myData);
-myData = myData.then(response => response.json())
-console.log(myData)
-
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(data => console.log(data));

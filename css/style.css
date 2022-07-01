@@ -13,7 +13,8 @@ nav{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 10px;
+    gap: 25px;
+    margin-right: 36px;
 }
 
 a, a:link, a:visited {
@@ -26,8 +27,7 @@ a, a:link, a:visited {
     display: grid;
     justify-content: center;
     grid: "typeSelector"
-          "userInputs"
-   
+          "userInputs"   
 }
 
 #inputHeader{
@@ -83,10 +83,12 @@ a, a:link, a:visited {
 }
 
 /* Styles for the data table for the build*/
-
-.buildOrderList table {
+.buildOrderList{
+    justify-content: center;
+    display: flex;
+}
+.buildOrderList table {    
     min-width: 150px;
-    margin-left: 20%
 }
 
 .buildOrderList tr {
