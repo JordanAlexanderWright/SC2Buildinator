@@ -64,52 +64,66 @@ document.getElementById('buildOrderTable').addEventListener('click', function(e)
 function makeFormFigure(){
     console.log('MAKING IT');
 
-    let rowCount = document.getElementById('buildOrderTable').children.length;
+    // Getting table parent container, the count for use later, and the items for iteration. 
+    const buildItemContainer = document.getElementById('buildOrderTable').children[1];
+    const buildItemCount = buildItemContainer.children.length;
+    const buildItems = buildItemContainer.children;
 
-
-    let testRow = document.getElementById(`tableRow-1`);
-    const myElement = testRow;
+    // Initializing a data object to hold all the data points
     let myData = {};
 
-    // Loops through the table row children, and put their information into an object
-    // values are [production, supply, time]. -1 prevents delete button from being added. 
+    // Loops through each build item and set their data into an object, for iteration. 
 
-    for (let i = 0; i < myElement.children.length - 1; i++) {
-        myData[myElement.children[i].classList[0]] = myElement.children[i].innerHTML;
+    for (let i = 0; i < buildItemCount; i++) {
+        myData[i] = {
+            'production': buildItems[i].children[0].innerHTML,
+            'supply':  buildItems[i].children[1].innerHTML,
+            'time': buildItems[i].children[2].innerHTML
+        }
     }
 
-    // Taking the time data, and splitting it so it can be passed to time. + is the urnary operator, makes it a number. 
-    splitTime = myData['time'].split(":");
+    console.log(myData);
+    console.log(typeof(myData));
+    console.log(myData[0])
+    console.log(Object.keys(myData));
 
-    let minutes = +splitTime[0];
-    let seconds = +splitTime[1];
+    // Iterating through each data point in my object I created
+    for(key in myData){
+        console.log(key);
 
-    let production = myData['production'];
-    let parsedProduction = production.toLowerCase();
-    parsedProduction = parsedProduction.split(' ').join('');
+        // Taking the time data, and splitting it so it can be passed to time. + is the urnary operator, makes it a number. 
+        splitTime = myData[key]['time'].split(":");
 
-    console.log(parsedProduction);
+        let minutes = +splitTime[0];
+        let seconds = +splitTime[1];
 
-    let timeToBuildSeconds = (minutes * 60) + seconds
+        let production = myData[key]['production'];
+        let parsedProduction = production.toLowerCase();
+        parsedProduction = parsedProduction.split(' ').join('');
 
-    let counterContainer = document.getElementById('counterContainer');
-    let counterNumber = counterContainer.childElementCount;
+        console.log(parsedProduction);
 
-    // Tests to see if data is valid, and creates a data object if it is. 
-    
-    let creationData = {}
+        let timeToBuildSeconds = (minutes * 60) + seconds
 
-    creationData['timeToBuild'] = timeToBuildSeconds;
-    creationData['whatToBuild'] = parsedProduction;
+        let counterContainer = document.getElementById('counterContainer');
+        let counterNumber = counterContainer.childElementCount;
 
-    // Creating the figure then starting the worker up, if it passed validation
-    creationData[`timerId`] = counterNumber + 1;
+        // Tests to see if data is valid, and creates a data object if it is. 
+        
+        let creationData = {}
 
-    if(creationData){
-        figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
-        myWorker.postMessage(creationData);
-    } else {
-        console.log('please check your inputs');
+        creationData['timeToBuild'] = timeToBuildSeconds;
+        creationData['whatToBuild'] = parsedProduction;
+
+        // Creating the figure then starting the worker up, if it passed validation
+        creationData[`timerId`] = counterNumber + 1;
+
+        if(creationData){
+            figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
+            myWorker.postMessage(creationData);
+        } else {
+            console.log('please check your inputs');
+        }
     }
     
 }
@@ -222,6 +236,13 @@ let testButton = document.getElementById('testButton');
 testButton.addEventListener('click', doMyStuff);
 
 
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(data => console.log(data));
+// fetch('https://jsonplaceholder.typicode.com/users')
+//     .then(response => response.json())
+//     .then(data => console.log(data));
+
+let testObject = {
+    1: 'hello',
+    2: 'goodbye'
+}
+
+console.log(testObject)
