@@ -16,6 +16,27 @@ nav{
     gap: 10px;
 }
 
+#terranSelector {
+    color: blue;
+    animation-duration: 1s;
+    animation-name: selectorHover;
+    animation-play-state: paused;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#terranSelector:hover{
+    animation-play-state: running;
+}
+
+    @keyframes selectorHover{
+        from{
+            font-size: 1em;
+        } to {
+            font-size: 2em;
+        }
+    }
+
 a, a:link, a:visited {
     color: black;
     text-decoration: none;
