@@ -130,7 +130,7 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
 
     let navItems = document.getElementById('raceSelector')
 
-    if (e.target.classList.contains('notSelected')){
+    if (e.target.classList.contains('notSelected') || e.target.classList == false){
 
         // This for loop iterates over the navigation items, and changes all the 
         // items classes to be 'notSelected'
@@ -140,7 +140,9 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
             console.log(navItems.children[i].children[0].children[0].classList)
             if(navItems.children[i].children[0].children[0].classList.contains('selected')){
                 navItems.children[i].children[0].children[0].classList.replace('selected', 'notSelected');
-            }            
+            } if(navItems.children[i].children[0].children[0].classList == false){
+                navItems.children[i].children[0].children[0].classList.add('notSelected');
+            }           
         }
 
         //Now changing the users input to be selected
@@ -148,6 +150,7 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
         e.target.classList.replace('notSelected', 'selected');
         console.log(e.target.innerHTML)
         
+        // Changing the body class to allow for the page style to change with the race selection
         let bodyElement = document.getElementById('mainBody')
 
         bodyElement.classList.replace(bodyElement.classList[0], e.target.innerHTML.toLowerCase())
@@ -158,14 +161,12 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
     }
 })
 
-// console.log(document.getElementById('raceSelector').children);
 
-// console.log(document.getElementById('mainBody').classList)
-// document.getElementById('mainBody').classList.pop()
-// document.getElementById('mainBody').classList.add(e.target.innerHTML.toLowerCase())
+let raceSelector = document.getElementById('raceSelector')
 
+console.log(raceSelector.classList);
 
-
+console.log(raceSelector.classList == false);
 // Test code
 let today = new Date();
 

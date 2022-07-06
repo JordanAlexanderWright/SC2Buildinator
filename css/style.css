@@ -17,9 +17,6 @@ body {
     background: linear-gradient(150deg, #3a0162 0%, #3E055A 30%, #7626B1 50%, #592821 70%, #6D1E1D 85%, #3B0600 100%);
     background-attachment: fixed;
 }
-/* body{
-   
-} */
 
 nav{
     border-bottom:3px solid black;

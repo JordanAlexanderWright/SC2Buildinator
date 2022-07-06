@@ -1,4 +1,3 @@
-
 // whenever the main app posts a message to the worker, it does the following code
 self.onmessage = function(message){
 
@@ -32,4 +31,3 @@ self.onmessage = function(message){
 sendMessage = function(data){
     self.postMessage(data)
 }
-
