@@ -29,7 +29,7 @@ a, a:link, a:visited {
     text-decoration: none;
 }
 
-.raceSelector{
+#raceSelector{
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -41,18 +41,18 @@ a, a:link, a:visited {
 
 #terranSelector {
     color: blue;
-    animation-duration: 1s;
-    animation-name: selectorHover;
-    animation-play-state: paused;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 }
 
-#terranSelector:hover{
+.selected {
+    animation-duration: 1s;
+    animation-name: selectedAnimation;
+    animation-play-state: paused;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
     animation-play-state: running;
 }
 
-    @keyframes selectorHover{
+    @keyframes selectedAnimation{
         from{
             font-size: 1em;
         } to {
@@ -60,10 +60,6 @@ a, a:link, a:visited {
         }
     }
 
-a, a:link, a:visited {
-    color: black;
-    text-decoration: none;
-}
 
 /* The Following Styles Apply for the User Inputs*/
 .buildMaker{
@@ -104,6 +100,7 @@ a, a:link, a:visited {
 #figureWrapper{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     
 }
 

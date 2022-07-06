@@ -33,6 +33,3 @@ sendMessage = function(data){
     self.postMessage(data)
 }
 
-
-
-

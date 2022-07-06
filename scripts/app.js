@@ -82,11 +82,6 @@ function makeFormFigure(){
         }
     }
 
-    console.log(myData);
-    console.log(typeof(myData));
-    console.log(myData[0])
-    console.log(Object.keys(myData));
-
     // Iterating through each data point in my object I created
     for(key in myData){
         console.log(key);
@@ -100,8 +95,6 @@ function makeFormFigure(){
         let production = myData[key]['production'];
         let parsedProduction = production.toLowerCase();
         parsedProduction = parsedProduction.split(' ').join('');
-
-        console.log(parsedProduction);
 
         let timeToBuildSeconds = (minutes * 60) + seconds
 
@@ -136,7 +129,18 @@ document.getElementById('formButton').addEventListener('click', makeFormFigure);
 
 
 
-
+document.getElementById('raceSelector').addEventListener('click', (e) => {
+    console.log(e.target);
+    console.log(e.target.classList);
+    if (e.target.classList.contains('notSelected')){
+        e.target.classList.replace('notSelected', 'selected');
+        // e.target.classList.pop()
+        // e.target.classList.push('selected')
+        console.log(e.target.classList);
+    } else {
+        console.log('It is currently selected');
+    }
+})
 
 
 
