@@ -127,8 +127,9 @@ document.getElementById('formButton').addEventListener('click', makeFormFigure);
 // This chunk adds functionality to the nav buttons and lets CSS animations happen
 
 document.getElementById('raceSelector').addEventListener('click', (e) => {
-    console.log(e.target);
-    console.log(e.target.classList);
+
+    let navItems = document.getElementById('raceSelector')
+
     if (e.target.classList.contains('notSelected')){
 
         // This for loop iterates over the navigation items, and changes all the 
@@ -143,15 +144,25 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
         }
 
         //Now changing the users input to be selected
-        
+
         e.target.classList.replace('notSelected', 'selected');
+        console.log(e.target.innerHTML)
+        
+        let bodyElement = document.getElementById('mainBody')
+
+        bodyElement.classList.replace(bodyElement.classList[0], e.target.innerHTML.toLowerCase())
+        console.log(bodyElement.classList);
+
     } else {
         console.log('It is currently selected');
     }
 })
 
-console.log(document.getElementById('raceSelector').children);
-let navItems = document.getElementById('raceSelector')
+// console.log(document.getElementById('raceSelector').children);
+
+// console.log(document.getElementById('mainBody').classList)
+// document.getElementById('mainBody').classList.pop()
+// document.getElementById('mainBody').classList.add(e.target.innerHTML.toLowerCase())
 
 
 
