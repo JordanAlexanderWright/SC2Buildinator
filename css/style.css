@@ -46,7 +46,6 @@ a, a:link, a:visited {
 .selected {
     animation-duration: 1s;
     animation-name: selectedAnimation;
-    animation-play-state: paused;
     animation-iteration-count: 1;
     animation-fill-mode: forwards; 
     animation-play-state: running;
@@ -60,7 +59,21 @@ a, a:link, a:visited {
         }
     }
 
+.notSelected {
+    animation-duration: 1s;
+    animation-name: notSelectedAnimation;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
+    @keyframes notSelectedAnimation{
+        from{
+            font-size: 2em;
+        } to {
+            font-size: 1em;
+        }
+    }
 /* The Following Styles Apply for the User Inputs*/
 .buildMaker{
     display: grid;

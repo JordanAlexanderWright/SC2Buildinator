@@ -124,28 +124,34 @@ function makeFormFigure(){
 
 document.getElementById('formButton').addEventListener('click', makeFormFigure);
 
-
-
-
-
+// This chunk adds functionality to the nav buttons and lets CSS animations happen
 
 document.getElementById('raceSelector').addEventListener('click', (e) => {
     console.log(e.target);
     console.log(e.target.classList);
     if (e.target.classList.contains('notSelected')){
+
+        // This for loop iterates over the navigation items, and changes all the 
+        // items classes to be 'notSelected'
+        for ( let i = 0; i < navItems.children.length; i++){
+            console.log(i)
+            console.log(navItems.children[i])
+            console.log(navItems.children[i].children[0].children[0].classList)
+            if(navItems.children[i].children[0].children[0].classList.contains('selected')){
+                navItems.children[i].children[0].children[0].classList.replace('selected', 'notSelected');
+            }            
+        }
+
+        //Now changing the users input to be selected
+        
         e.target.classList.replace('notSelected', 'selected');
-        // e.target.classList.pop()
-        // e.target.classList.push('selected')
-        console.log(e.target.classList);
     } else {
         console.log('It is currently selected');
     }
 })
 
-
-
-
-
+console.log(document.getElementById('raceSelector').children);
+let navItems = document.getElementById('raceSelector')
 
 
 
