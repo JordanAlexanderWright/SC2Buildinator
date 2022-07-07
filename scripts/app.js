@@ -83,15 +83,7 @@ function makeFormFigure(){
     
 }
 
-
-document.getElementById('buildOrderTable').addEventListener('click', (e) => console.log(e.target));
-
-const buildItemContainer = document.getElementById('buildOrderTable').children[1];
-
-console.log(buildItemContainer);
-// Test code
-
-
+document.getElementById('navigation').addEventListener('click', (e) => console.log(e.target, e.target.tagName));
 // let today = new Date();
 
 // console.log(today.getTime())
