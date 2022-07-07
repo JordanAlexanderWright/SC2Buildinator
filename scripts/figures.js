@@ -7,17 +7,20 @@ class figureCreator{
         this.terranBuildings = ['armory', 'barracks', 'bunker', 'commandcenter', 'engineeringbay', 'factory', 'fusioncore', 'ghostacademy', 
                                 'missleturret', 'orbitalcommand', 'reactor', 'refinery', 'sensortower', 'starport', 'supplydepot',
                                 'techlab'];
-        this.terranUpgradtes = ['placeholder'];
+        this.terranUpgrades = ['placeholder'];
         this.tableRowCounter = 1;
     }
 
+    // A simple checker to see if the production is a valid input
     typeChecker(productionName){
         if (this.terranUnits.includes(productionName)){
             return 'units';
         } if (this.terranBuildings.includes(productionName)){
             return 'buildings';
-        } if (this.terranUpgrades.includes(productionData)){
+        } if (this.terranUpgrades.includes(productionName)){
             return 'upgrades';
+        } else {
+            return false;
         }
     }
 
@@ -102,7 +105,7 @@ class figureCreator{
        let formValues = [minutes, seconds, supply, parsedProduction]
 
        // If all entries contain a value + the production object is valid, continue. Else throw an error
-       if (formValues.every(value => value !== "") && this.terranUnits.includes(parsedProduction)){
+       if (formValues.every(value => value !== "") && this.typeChecker(parsedProduction)){
 
             let time = `${minutes}:${seconds}`;
             let tableRow = document.createElement('tr');

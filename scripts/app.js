@@ -29,7 +29,7 @@ function makeFormFigure(){
     const buildItemContainer = document.getElementById('buildOrderBody');
     const buildItemCount = buildItemContainer.children.length;
     const buildItems = buildItemContainer.children;
-    
+
     // Initializing a data object to hold all the data points
     let myData = {};
 
@@ -39,7 +39,7 @@ function makeFormFigure(){
         myData[i] = {
             'production': buildItems[i].children[0].innerHTML,
             'supply':  buildItems[i].children[1].innerHTML,
-            'time': buildItems[i].children[2].innerHTML
+            'time': buildItems[i].children[2].innerHTML,
         }
     }
 

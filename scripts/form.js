@@ -1,9 +1,8 @@
-// Prevent default behavior of input field 
-document.getElementById('objectSelector').addEventListener(`keydown`, function(e){
+// Prevent default behavior of input field, and allow enter to run function to add the date to table
+document.getElementById('userInputs').addEventListener(`keydown`, function(e){
     if( e.key === 'Enter'){
-        console.log('hello');
         e.preventDefault();
-        createCounter();
+        figureTool.getData();
         e.target.value = '';
     }
 })
@@ -17,7 +16,7 @@ function userInputExperience (field, fieldLength, maxValue){
 
     field.addEventListener(`keydown`, function(e){ 
         console.log(e.code);
-        if ((e.target.value.length >= fieldLength) && (e.code != 'Backspace')){
+        if ((e.target.value.length >= fieldLength) && (e.code != 'Backspace') && (e.code != 'Tab')){
             e.preventDefault();
         } if ((e.code.includes('Digit') === false) && (e.code.includes('Backspace') === false) && (e.code.includes('Tab') === false)){
             console.log('prevent')
