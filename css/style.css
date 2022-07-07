@@ -9,17 +9,17 @@ body {
 
 .terran{
     background: rgb(38,46,72);
-    background: linear-gradient(150deg, rgba(38,46,72,1) 0%, rgba(84,110,148,1) 50%, rgba(136,152,143,1) 100%);
+    background: linear-gradient(to right, rgba(38,46,72,1) 0%, rgba(84,110,148,1) 50%, rgba(136,152,143,1) 100%);
     background-attachment: fixed;
 }
 
 .zerg {
-    background: linear-gradient(150deg, #3a0162 0%, #3E055A 30%, #7626B1 50%, #592821 70%, #6D1E1D 85%, #3B0600 100%);
+    background: linear-gradient(to top right, #3a0162 0%, #3E055A 30%, #7626B1 50%, #592821 70%, #6D1E1D 85%, #3B0600 100%);
     background-attachment: fixed;
 }
 
 .protoss{
-    background: linear-gradient(150deg, rgb(34, 173, 238), rgba(204, 185, 17, 0.808) );
+    background: linear-gradient(to bottom right, rgb(34, 173, 238), rgba(170, 154, 9, 0.808) );
     background-attachment: fixed;
 }
 
@@ -92,6 +92,7 @@ a, a:link, a:visited {
 /* The Following Styles Apply for the User Inputs*/
 .buildMaker{
     display: grid;
+    margin-top: 15px;
     justify-content: center;
     grid: "typeSelector"
           "userInputs"   

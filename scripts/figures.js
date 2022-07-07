@@ -49,47 +49,6 @@ class figureCreator{
 
     }
     
-    // This method validates the users input, and creates data from it if it's correct.
-
-    figureDataHandling(){
-        let userInput = document.getElementById('objectSelector').value.toLowerCase();
-        let parsedInput = userInput.split(' ').join('');
-
-        // Intializing my data object to be returned
-        let creationData = {};
-
-        let timeToBuild = 12;
-        // Check to see if the unit is actually a unit in the game
-        if(this.terranUnits.includes(parsedInput) || this.terranBuildilngs.includes(parsedInput)){
-
-            console.log('its valid!');
-            creationData[`whatToBuild`] = parsedInput;
-            creationData[`timeToBuild`] = timeToBuild;
-
-        // This switch statement handles what category of thing is being built (unit, upgrade, building)
-            switch(true) {
-                case document.getElementById('unit').checked:
-                    creationData[`type`] = document.getElementById('unit').value;
-                    break;
-                case document.getElementById('building').checked:
-                    creationData[`type`] = document.getElementById('building').value;
-                    break;
-                case document.getElementById('upgrade').checked:
-                    creationData[`type`] = document.getElementById('upgrade').value;
-                    break;
-            }
-
-        } else {
-
-            // If the object does not exist, creationData is returned as false so that the createCounter() function does not work. 
-            console.log('Not a valid unit, try again');
-            creationData = false;
-        }
-
-        return creationData;
-
-    }
-
     // Method needs to be defined like this in order to have access to this.properties. 
     getData = () => {
 
