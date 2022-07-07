@@ -16,10 +16,10 @@ function userInputExperience (field, fieldLength, maxValue){
     // Is staying under the maximum length the field should be.
 
     field.addEventListener(`keydown`, function(e){ 
-
+        console.log(e.code);
         if ((e.target.value.length >= fieldLength) && (e.code != 'Backspace')){
             e.preventDefault();
-        } if ((e.code.includes('Digit') === false) && (e.code.includes('Backspace') === false)){
+        } if ((e.code.includes('Digit') === false) && (e.code.includes('Backspace') === false) && (e.code.includes('Tab') === false)){
             console.log('prevent')
             e.preventDefault();
         }})

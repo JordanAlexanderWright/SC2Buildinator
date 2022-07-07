@@ -79,11 +79,9 @@ function makeFormFigure(){
         } else {
             console.log('please check your inputs');
         }
-    }
-    
+    }  
 }
 
-document.getElementById('navigation').addEventListener('click', (e) => console.log(e.target, e.target.tagName));
 // let today = new Date();
 
 // console.log(today.getTime())
