@@ -29,10 +29,7 @@ function makeFormFigure(){
     const buildItemContainer = document.getElementById('buildOrderBody');
     const buildItemCount = buildItemContainer.children.length;
     const buildItems = buildItemContainer.children;
-
-    console.log(buildItems);
-    console.log(buildItemContainer);
-
+    
     // Initializing a data object to hold all the data points
     let myData = {};
 

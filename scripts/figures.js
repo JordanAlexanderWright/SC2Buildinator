@@ -3,28 +3,44 @@ class figureCreator{
     constructor(){
         this.figureContainer = document.getElementById('counterContainer');
         this.terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
-        'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
+                            'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
+        this.terranBuildings = ['armory', 'barracks', 'bunker', 'commandcenter', 'engineeringbay', 'factory', 'fusioncore', 'ghostacademy', 
+                                'missleturret', 'orbitalcommand', 'reactor', 'refinery', 'sensortower', 'starport', 'supplydepot',
+                                'techlab'];
+        this.terranUpgradtes = ['placeholder'];
         this.tableRowCounter = 1;
     }
 
-    makeFigure(unitType, timerId) {
+    typeChecker(productionName){
+        if (this.terranUnits.includes(productionName)){
+            return 'units';
+        } if (this.terranBuildings.includes(productionName)){
+            return 'buildings';
+        } if (this.terranUpgrades.includes(productionData)){
+            return 'upgrades';
+        }
+    }
+
+    makeFigure(productionName, timerId) {
 
         let newFigure = document.createElement('figure');
         newFigure.classList.add('showing');
-        
+
         let figureImage = document.createElement('img');
-        figureImage.src = `/resources/icons/units/${unitType}.png`
+        let productionType = this.typeChecker(productionName)
+        console.log(productionType);
+        figureImage.src = `/resources/icons/${productionType}/${productionName}.png`
 
         let figureLabel = document.createElement('figcaption');
-        figureLabel.innerHTML = `${unitType}`;
+        figureLabel.innerHTML = `${productionName}`;
 
         let figureTimer = document.createElement('figcaption');
-        figureTimer.innerHTML = 'Timer'
-        figureTimer.id = timerId
+        figureTimer.innerHTML = 'Timer';
+        figureTimer.id = timerId;
 
         newFigure.append(figureImage);
         newFigure.append(figureLabel);
-        newFigure.append(figureTimer)
+        newFigure.append(figureTimer);
 
         this.figureContainer.append(newFigure);
 
@@ -41,7 +57,7 @@ class figureCreator{
 
         let timeToBuild = 12;
         // Check to see if the unit is actually a unit in the game
-        if(this.terranUnits.includes(parsedInput)){
+        if(this.terranUnits.includes(parsedInput) || this.terranBuildilngs.includes(parsedInput)){
 
             console.log('its valid!');
             creationData[`whatToBuild`] = parsedInput;
@@ -92,12 +108,12 @@ class figureCreator{
             let tableRow = document.createElement('tr');
 
             // Counter to be able to access this data by it's class. 
-            tableRow.id = `tableRow-${this.tableRowCounter + 1}`
+            tableRow.id = `tableRow-${this.tableRowCounter + 1}`;
             console.log(tableRow.id);
 
             let productionData = document.createElement('td');
             productionData.innerHTML =  production;            
-            productionData.classList.add('production')
+            productionData.classList.add('production');
 
             let supplyData = document.createElement('td');
             supplyData.innerHTML = supply;
@@ -117,21 +133,21 @@ class figureCreator{
 
             // Creating an array of elements to iterate over + appending to new row
 
-            let createdElements = [productionData, supplyData, timeData, deleteButton]
+            let createdElements = [productionData, supplyData, timeData, deleteButton];
 
         //    console.log(createdElements.every(element => element === "asdf"))
         //    createdElements.forEach(element => console.log(typeof(element)));
 
 
-            createdElements.forEach((data) => tableRow.append(data))
+            createdElements.forEach((data) => tableRow.append(data));
 
             // appending new row to table
 
-            createdElements.forEach((data) => tableRow.append(data))
+            createdElements.forEach((data) => tableRow.append(data));
             document.getElementById('buildOrderBody').append(tableRow);            
             
         } else {
-            alert(`There's a problem with your form values.`)
+            alert(`There's a problem with your form values.`);
         }
     } 
 

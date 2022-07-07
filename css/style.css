@@ -115,14 +115,14 @@ a, a:link, a:visited {
 #figureWrapper{
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    
+    margin-top: 10px;   
 }
 
 #counterContainer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    /* min-width: 250px; */
     justify-content: flex-start;
     margin-top: 0;
     max-width: 75%;
