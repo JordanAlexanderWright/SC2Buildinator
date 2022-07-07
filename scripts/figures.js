@@ -10,7 +10,8 @@ class figureCreator{
     makeFigure(unitType, timerId) {
 
         let newFigure = document.createElement('figure');
-
+        newFigure.classList.add('showing');
+        
         let figureImage = document.createElement('img');
         figureImage.src = `/resources/icons/units/${unitType}.png`
 

@@ -14,7 +14,8 @@ myWorker.onmessage = function(message){
     // Deletes the figure if the counter is completed, after 5 seconds. 
     
     if (message['data']['count'] === message['data']['timeToBuild']){
-               setTimeout(() => document.getElementById(message['data']['id']).parentElement.remove(), 5000);
+            document.getElementById(message['data']['id']).parentElement.classList.add('goAway')
+            setTimeout(() => document.getElementById(message['data']['id']).parentElement.remove(), 5000);
     }
 }
 
@@ -63,16 +64,16 @@ function makeFormFigure(){
         let counterContainer = document.getElementById('counterContainer');
         let counterNumber = counterContainer.childElementCount;
 
-        // Tests to see if data is valid, and creates a data object if it is. 
+        // Creating an object of the parsed data to be passed to worker 
         
         let creationData = {}
 
         creationData['timeToBuild'] = timeToBuildSeconds;
         creationData['whatToBuild'] = parsedProduction;
-
-        // Creating the figure then starting the worker up, if it passed validation
         creationData[`timerId`] = counterNumber + 1;
 
+        // Creating the figure then starting the worker up
+      
         if(creationData){
             figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
             myWorker.postMessage(creationData);

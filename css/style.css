@@ -175,10 +175,33 @@ figure {
     max-width: fit-content;
 }
 
+figure.showing figcaption{
+    color:rgb(16, 236, 16);
+}
+
 figure img{
     height: 100px;
     width: 100px;
 }
+
+figure.goAway figcaption{
+    color:rgb(248, 17, 17);
+}
+figure.goAway{
+    animation-duration: 5s;
+    animation-name: disappear;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+    @keyframes disappear {
+        from {
+            opacity: 100%
+        } to {
+            opacity: 0%
+        }
+    }
 
 
 
