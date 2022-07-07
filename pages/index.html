@@ -57,6 +57,7 @@
 
         <input type="button" value="GetData" id = 'getInputData'>
         <input type="button" value="Make Figure From form" id = 'formButton'>
+
     </div>
 
     <div id="figureWrapper">
@@ -76,14 +77,16 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-           
-            <tr class="tableRow-1" id="tableRow-1">
-                <td class="production">SCV</td>
-                <td class="supply">14</td>
-                <td class="time">0:16</td>
-                <td><a href="#" class="deleteButton">x</a></td>
-            </tr>
-
+            
+            <tbody id="buildOrderBody">
+                <tr class="tableRow-1" id="tableRow-1">
+                    <td class="production">SCV</td>
+                    <td class="supply">14</td>
+                    <td class="time">0:16</td>
+                    <td><a href="#" class="deleteButton">x</a></td>
+                </tr>
+            </tbody>
+<!-- 
             <tr class="tableRow-2" id="tableRow-2">
                 <td class="production">Marine</td>
                 <td class="supply">16</td>
@@ -169,7 +172,7 @@
                 <td class="supply">20</td>
                 <td class="time">0:30</td>
                 <td><a href="#" class="deleteButton">x</a></td>
-            </tr>
+            </tr> -->
         
         </table>
     </div>
@@ -182,9 +185,12 @@
             <figcaption>Placeholder</figcaption>
         </figure>
     </div> -->
-    <script src="../scripts/figures.js"></script>
+    <script src="../scripts/figures.js"></script>  
     <script src="../scripts/form.js"></script>
     <script src="../scripts/app.js"></script>
+    <script src="../scripts/events.js"></script>
+    
+   
 
 </body>
 

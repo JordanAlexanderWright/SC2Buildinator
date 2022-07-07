@@ -73,8 +73,7 @@ class figureCreator{
     // Method needs to be defined like this in order to have access to this.properties. 
     getData = () => {
 
-        console.log('trying');
-       //Getting the values of all form elements
+       //Getting the values of all elements
        let minutes = document.getElementById('minuteSelector').value;
        let seconds = document.getElementById('secondSelector').value;
        let supply = document.getElementById('supplySelector').value;
@@ -92,10 +91,11 @@ class figureCreator{
             let tableRow = document.createElement('tr');
 
             // Counter to be able to access this data by it's class. 
-            tableRow.id = `tableRow-${this.tableRowCounter}`
+            tableRow.id = `tableRow-${this.tableRowCounter + 1}`
+            console.log(tableRow.id);
 
             let productionData = document.createElement('td');
-            productionData.innerHTML =  production;
+            productionData.innerHTML =  production;            
             productionData.classList.add('production')
 
             let supplyData = document.createElement('td');
@@ -126,9 +126,9 @@ class figureCreator{
 
             // appending new row to table
 
-            document.getElementById('buildOrderTable').append(tableRow);
-
             createdElements.forEach((data) => tableRow.append(data))
+            document.getElementById('buildOrderBody').append(tableRow);            
+            
         } else {
             alert(`There's a problem with your form values.`)
         }
