@@ -10,11 +10,16 @@ body {
 .terran{
     background: rgb(38,46,72);
     background: linear-gradient(150deg, rgba(38,46,72,1) 0%, rgba(84,110,148,1) 50%, rgba(136,152,143,1) 100%);
-     background-attachment: fixed;
+    background-attachment: fixed;
 }
 
 .zerg {
     background: linear-gradient(150deg, #3a0162 0%, #3E055A 30%, #7626B1 50%, #592821 70%, #6D1E1D 85%, #3B0600 100%);
+    background-attachment: fixed;
+}
+
+.protoss{
+    background: linear-gradient(150deg, rgb(34, 173, 238), rgba(204, 185, 17, 0.808) );
     background-attachment: fixed;
 }
 
@@ -43,6 +48,14 @@ a, a:link, a:visited {
 
 #terranSelector {
     color: blue;
+}
+
+#zergSelector {
+    color: #7626B1;
+}
+
+#protossSelector {
+    color: rgba(204, 185, 17, 0.808);
 }
 
 .selected {
@@ -111,6 +124,20 @@ a, a:link, a:visited {
     grid-column-end: 3;
 }
 
+
+
+/*Styles for placeholder buttons */
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+#minuteSelector, #secondSelector, #supplySelector{
+    max-width: 50px;
+}
+
 /* Build Figures */
 
 #figureWrapper{
@@ -134,18 +161,7 @@ a, a:link, a:visited {
 #counterContainer img{
     border-radius: 4px;
     border-style: ridge;
-}
-
-/*Styles for placeholder buttons */
-.buttonContainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    justify-content: center;
-}
-
-#minuteSelector, #secondSelector, #supplySelector{
-    max-width: 50px;
+    border-color: grey;
 }
 
 /* Styles for the data table for the build*/
