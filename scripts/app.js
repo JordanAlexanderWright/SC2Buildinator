@@ -1,7 +1,6 @@
 // Creating a worker, and a figure handler from my figure class in figures.js
 
 const myWorker = new Worker('../scripts/worker.js');
-document.getElementById('makeCounter').addEventListener('click', createCounter);
 let figureTool = new figureCreator();
 
 // this Sets up what will happen when I recieve data from my worker
@@ -21,29 +20,6 @@ myWorker.onmessage = function(message){
 
 myWorker.onerror = function(e){
     console.log(e);
-}
-
-function createCounter(){
-
-    //  Using counter number to be able to count the number of counters that are in the collection
-    // Then use that number to assign an id to the counter so that I can pass that to my worker to manipulate it. 
-
-    let counterContainer = document.getElementById('counterContainer');
-    let counterNumber = counterContainer.childElementCount;
-
-    // Tests to see if data is valid, and creates a data object if it is. 
-    let creationData = figureTool.figureDataHandling();
-    
-    // Creating the figure then starting the worker up, if it passed validation
-    creationData[`timerId`] = counterNumber + 1 
-
-    if(creationData){
-        figureTool.makeFigure(`${creationData[`whatToBuild`]}`, (counterNumber + 1))
-        myWorker.postMessage(creationData);
-    } else {
-        console.log('please check your inputs');
-    }
-
 }
 
 document.getElementById('getInputData').addEventListener('click', figureTool.getData);
@@ -152,6 +128,8 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
 
 
 // Test code
+
+
 // let today = new Date();
 
 // console.log(today.getTime())
