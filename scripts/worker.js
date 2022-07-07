@@ -1,11 +1,8 @@
 // whenever the main app posts a message to the worker, it does the following code
 self.onmessage = function(message){
 
-    console.log(message);
     let timerId = message['data'][`timerId`];
-    console.log(timerId);
     let counter = 1;
-
 
     /* this function basically creates a timer that executes every second.
         It sends back a message to the main app to change the timer counter
@@ -13,7 +10,6 @@ self.onmessage = function(message){
         to build, and then continues if it is not time to remove the figure.
     */ 
    let myInterval = setInterval(function(){
-        console.log(counter);
 
         self.sendMessage({
             'count': counter,

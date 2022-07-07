@@ -15,9 +15,7 @@ myWorker.onmessage = function(message){
     // Deletes the figure if the counter is completed, after 5 seconds. 
     
     if (message['data']['count'] === message['data']['timeToBuild']){
-        console.log('needs to be removed');
-        console.log('Build it!!!!!')
-        setTimeout(() => document.getElementById(message['data']['id']).parentElement.remove(), 5000);
+               setTimeout(() => document.getElementById(message['data']['id']).parentElement.remove(), 5000);
     }
 }
 
@@ -56,14 +54,12 @@ document.getElementById('getInputData').addEventListener('click', figureTool.get
 document.getElementById('buildOrderTable').addEventListener('click', function(e){
 
     if (e.target.classList.contains('deleteButton')) {
-        console.log(e.target.parentElement.parentElement);
         e.target.parentElement.parentElement.remove();
     }
 });
 
 function makeFormFigure(){
-    console.log('MAKING IT');
-
+  
     // Getting table parent container, the count for use later, and the items for iteration. 
     const buildItemContainer = document.getElementById('buildOrderTable').children[1];
     const buildItemCount = buildItemContainer.children.length;
@@ -84,8 +80,7 @@ function makeFormFigure(){
 
     // Iterating through each data point in my object I created
     for(key in myData){
-        console.log(key);
-
+       
         // Taking the time data, and splitting it so it can be passed to time. + is the urnary operator, makes it a number. 
         splitTime = myData[key]['time'].split(":");
 
@@ -156,23 +151,18 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
 })
 
 
-let raceSelector = document.getElementById('raceSelector')
-
-console.log(raceSelector.classList);
-
-console.log(raceSelector.classList == false);
 // Test code
-let today = new Date();
+// let today = new Date();
 
-console.log(today.getTime())
+// console.log(today.getTime())
 
-let startTime = today.getTime()
-let seconds = 10
-let miliSeconds = seconds * 1000
+// let startTime = today.getTime()
+// let seconds = 10
+// let miliSeconds = seconds * 1000
 
-endTime = startTime + miliSeconds
+// endTime = startTime + miliSeconds
 
-console.log(startTime, endTime);
+// console.log(startTime, endTime);
 
 // This is a test function that I am going to be using to set the workers into motion. This will check the timing over and over again until 
 // It is time for the worker to pass data back to the main application script. 
@@ -189,36 +179,36 @@ console.log(startTime, endTime);
 
 
 
-let testData = {
-    '1': {'unit': 'scv', 'time': '00:05'},
-    '2': {'unit': 'scv', 'time': '00:20'}
-}
+// let testData = {
+//     '1': {'unit': 'scv', 'time': '00:05'},
+//     '2': {'unit': 'scv', 'time': '00:20'}
+// }
 
 // document.getElementById(`test`).addEventListener(`click`, checkRadio);
 
-console.log(testData['1'])
-console.log(Object.keys(testData));
+// console.log(testData['1'])
+// console.log(Object.keys(testData));
 
-let someData = (Object.keys(testData));
+// let someData = (Object.keys(testData));
 
 
-function testingStuff(data){
-    console.log(parseInt(data))
-    if(isNaN(parseInt(data))){
-        return('That sucked');
-    }else {
-        return('That worked');
-    }
-}
+// function testingStuff(data){
+//     console.log(parseInt(data))
+//     if(isNaN(parseInt(data))){
+//         return('That sucked');
+//     }else {
+//         return('That worked');
+//     }
+// }
 
-console.log(testingStuff('bl'))
+// console.log(testingStuff('bl'))
 
-let someVariable = '2'
+// let someVariable = '2'
 
-someVariable = +someVariable
-console.log(typeof(someVariable));
+// someVariable = +someVariable
+// console.log(typeof(someVariable));
 
-console.log('poop')
+// console.log('poop')
 
 // let testRow = document.getElementById(`tableRow-1`);
 
@@ -240,25 +230,25 @@ console.log('poop')
 
 // console.log(myData);
 
-function doMyStuff(){
-    let rowCount = document.getElementById('buildOrderTable').children.length;
+// function doMyStuff(){
+//     let rowCount = document.getElementById('buildOrderTable').children.length;
 
-    console.log(rowCount);
+//     console.log(rowCount);
 
-    console.log(document.getElementById('buildOrderTable').children);
+//     console.log(document.getElementById('buildOrderTable').children);
 
-}
-let testButton = document.getElementById('testButton');
-testButton.addEventListener('click', doMyStuff);
+// }
+// let testButton = document.getElementById('testButton');
+// testButton.addEventListener('click', doMyStuff);
 
 
 // fetch('https://jsonplaceholder.typicode.com/users')
 //     .then(response => response.json())
 //     .then(data => console.log(data));
 
-let testObject = {
-    1: 'hello',
-    2: 'goodbye'
-}
+// let testObject = {
+//     1: 'hello',
+//     2: 'goodbye'
+// }
 
-console.log(testObject)
+// console.log(testObject)
