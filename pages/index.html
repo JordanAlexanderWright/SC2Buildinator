@@ -18,24 +18,62 @@
         </ul>
     </nav>
 
-    <form action="" class="buildMaker">
+    <div class="inputs">
 
-        <div class="userInputs" id="userInputs">
+   
+        <form action="" class="buildMaker">
 
-            <input type="text" name="" id="objectSelector" placeholder="What would you like to build?">
+            <div class="userInputs" id="userInputs">
+
+                <input type="text" name="" id="objectSelector" placeholder="What would you like to build?">
+                
+                <label for="minuteSelector">Minutes:</label>
+                <input type="number" id="minuteSelector" placeholder="" maxlength="2" max="59" name="minuteSelector">
+                
+                <label for="secondSelector">Seconds:</label>
+                <input type="number" id="secondSelector" placeholder="" maxlength="2" max="59" name="secondSelector">
+                
+                <label for="supplySelector">Supply Count:</label>
+                <input type="number" id="supplySelector" placeholder="" max="200" name="supplySelector">
+                
+            </div>
             
-            <label for="minuteSelector">Minutes:</label>
-            <input type="number" id="minuteSelector" placeholder="" maxlength="2" max="59" name="minuteSelector">
-            
-            <label for="secondSelector">Seconds:</label>
-            <input type="number" id="secondSelector" placeholder="" maxlength="2" max="59" name="secondSelector">
-            
-            <label for="supplySelector">Supply Count:</label>
-            <input type="number" id="supplySelector" placeholder="" max="200" name="supplySelector">
-            
+          
+        </form>
+
+        <div class="fromJson" id="jsonEntry">
+            <textarea name="" id="" cols="40" rows="30">
+                [{
+                    "player1": {
+                        "name": "Soule",
+                        "build": [
+                            [
+                                "SCV",
+                                0,
+                                12
+                            ],
+                            [
+                                "SCV",
+                                12,
+                                24
+                            ],
+                            [
+                                "SupplyDepot",
+                                17,
+                                36
+                            ]
+                        ]
+                    }
+                }]
+            </textarea>
         </div>
+
+    </div>
+
+
+    </div>
       
-    </form>
+    
 
     <div class="buttonContainer">
 

@@ -80,6 +80,53 @@ function makeFormFigure(){
     }  
 }
 
+function isJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+let jsonEntryBox = document.getElementById('jsonEntry');
+let jsonData 
+
+jsonEntryBox.addEventListener('click', function(e){
+    jsonData = e.target.value;
+    console.log(jsonData);  
+    console.log(isJsonString(jsonData));
+    } 
+
+
+)
+
+
+console.log(jsonData)
+console.log(isJsonString(jsonData))
+// console.log(isJsonString(`[{
+// 	"player1": {
+// 		"name": "Soule",
+// 		"build": [
+// 			[
+// 				"SCV",
+// 				0,
+// 				12
+// 			],
+// 			[
+// 				"SCV",
+// 				12,
+// 				24
+// 			],
+// 			[
+// 				"SupplyDepot",
+// 				17,
+// 				36
+// 			]
+// 		]
+// 	}
+// }]`))
+
 // let today = new Date();
 
 // console.log(today.getTime())

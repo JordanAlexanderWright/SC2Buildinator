@@ -92,11 +92,28 @@ a, a:link, a:visited {
     
 /* The Following Styles Apply for the User Inputs*/
 .buildMaker{
+    
     display: grid;
-    margin-top: 15px;
+   
     justify-content: center;
+    max-height: 200px;
     grid: "typeSelector"
-          "userInputs"   
+          "userInputs " 
+}
+
+.fromjson{
+
+    min-height: 500px;
+}
+
+.inputs {
+    display: flex;
+    min-width:1000px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+   
+    margin-top: 15px;
 }
 
 #inputHeader{
@@ -171,6 +188,7 @@ a, a:link, a:visited {
     justify-content: center;
     display: flex;
 }
+
 .buildOrderList table {    
     min-width: 150px;
     border-style: outset;
