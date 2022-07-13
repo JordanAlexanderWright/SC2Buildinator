@@ -90,7 +90,7 @@ function isJsonString(str) {
 }
 
 let jsonEntryBox = document.getElementById('jsonEntry');
-let jsonData 
+let jsonData ;
 
 jsonEntryBox.addEventListener('click', function(e){
     jsonData = e.target.value;
@@ -102,128 +102,15 @@ jsonEntryBox.addEventListener('click', function(e){
 )
 
 
-console.log(jsonData)
-console.log(isJsonString(jsonData))
-// console.log(isJsonString(`[{
-// 	"player1": {
-// 		"name": "Soule",
-// 		"build": [
-// 			[
-// 				"SCV",
-// 				0,
-// 				12
-// 			],
-// 			[
-// 				"SCV",
-// 				12,
-// 				24
-// 			],
-// 			[
-// 				"SupplyDepot",
-// 				17,
-// 				36
-// 			]
-// 		]
-// 	}
-// }]`))
+async function getJson(){
 
-// let today = new Date();
+    const response = await fetch('../resources/icons/testjson.json')
+    const data = await response.json();
 
-// console.log(today.getTime())
+    return data[0]
+}
 
-// let startTime = today.getTime()
-// let seconds = 10
-// let miliSeconds = seconds * 1000
+let myObject = getJson()
+    myObject.then(data => figureTool.fromJson(data))
 
-// endTime = startTime + miliSeconds
-
-// console.log(startTime, endTime);
-
-// This is a test function that I am going to be using to set the workers into motion. This will check the timing over and over again until 
-// It is time for the worker to pass data back to the main application script. 
-// const myTest = setInterval(function(){
-
-//     if ((new Date().getTime()) < endTime){
-//         console.log('continuing');
-//         console.log(new Date().getTime());
-//     } else if ((new Date().getTime()) >= endTime){
-//         console.log('Success');
-//         clearInterval(myTest);
-//     }
-// }, 100)
-
-
-
-// let testData = {
-//     '1': {'unit': 'scv', 'time': '00:05'},
-//     '2': {'unit': 'scv', 'time': '00:20'}
-// }
-
-// document.getElementById(`test`).addEventListener(`click`, checkRadio);
-
-// console.log(testData['1'])
-// console.log(Object.keys(testData));
-
-// let someData = (Object.keys(testData));
-
-
-// function testingStuff(data){
-//     console.log(parseInt(data))
-//     if(isNaN(parseInt(data))){
-//         return('That sucked');
-//     }else {
-//         return('That worked');
-//     }
-// }
-
-// console.log(testingStuff('bl'))
-
-// let someVariable = '2'
-
-// someVariable = +someVariable
-// console.log(typeof(someVariable));
-
-// console.log('poop')
-
-// let testRow = document.getElementById(`tableRow-1`);
-
-// console.log(testRow);
-
-// console.log(testRow.childNodes);
-
-// const myElement = testRow;
-// let myData = {};
-
-// // Loops through the table row children, and put their information into an object
-
-// for (let i = 0; i < myElement.children.length - 1; i++) {
-//   console.log(myElement.children[i].classList);
-//   console.log(myElement.children[i].classList[0]);
-//   myData[myElement.children[i].classList[0]] = myElement.children[i].innerHTML;
-
-// }
-
-// console.log(myData);
-
-// function doMyStuff(){
-//     let rowCount = document.getElementById('buildOrderTable').children.length;
-
-//     console.log(rowCount);
-
-//     console.log(document.getElementById('buildOrderTable').children);
-
-// }
-// let testButton = document.getElementById('testButton');
-// testButton.addEventListener('click', doMyStuff);
-
-
-// fetch('https://jsonplaceholder.typicode.com/users')
-//     .then(response => response.json())
-//     .then(data => console.log(data));
-
-// let testObject = {
-//     1: 'hello',
-//     2: 'goodbye'
-// }
-
-// console.log(testObject)
+// console.log(Math.floor(1.5))

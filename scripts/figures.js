@@ -48,6 +48,26 @@ class figureCreator{
         this.figureContainer.append(newFigure);
 
     }
+
+    fromJson = (data) =>{
+     
+        let build1 = data['player1']['build']
+      
+
+        console.log(build1[0])
+        for(let x in build1){
+            
+            let production = build1[x][0]
+            let minutes = Math.floor(build1[x][1] / 60)
+            let seconds = build1[x][1] % 60
+            let supply = build1[x][2]
+
+            let parsedProduction = production.toLowerCase().split(' ').join('');
+
+            console.log(parsedProduction, minutes, seconds, supply)
+            console.log("it worked?")
+        }
+    }
     
     // Method needs to be defined like this in order to have access to this.properties. 
     getData = () => {
