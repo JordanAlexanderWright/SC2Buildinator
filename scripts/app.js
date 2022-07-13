@@ -13,7 +13,7 @@ myWorker.onmessage = function(message){
 
     // Deletes the figure if the counter is completed, after 5 seconds. 
     
-    if (message['data']['count'] === message['data']['timeToBuild']){
+    if (message['data']['count'] >= message['data']['timeToBuild']){
             document.getElementById(message['data']['id']).parentElement.classList.add('goAway')
             setTimeout(() => document.getElementById(message['data']['id']).parentElement.remove(), 5000);
     }
