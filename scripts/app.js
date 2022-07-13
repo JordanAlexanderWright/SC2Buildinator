@@ -113,4 +113,15 @@ async function getJson(){
 let myObject = getJson()
     myObject.then(data => figureTool.fromJson(data))
 
-// console.log(Math.floor(1.5))
+// myString = 'barrackstechlab'
+
+// if(myString.includes('barrac')){
+//     console.log('yep');
+// } else {
+//     console.log('nah');
+// }
+
+// console.log(myString.split('techlab'))
+
+// let mySplitString = myString.split('barracks');
+// console.log(mySplitString);
