@@ -90,16 +90,41 @@ function isJsonString(str) {
 }
 
 let jsonEntryBox = document.getElementById('jsonEntry');
+let jsonButton = document.getElementById('jsonButton');
+
+
+function importJson(){
+
+    let importData = jsonEntryBox.value;
+
+    console.log(typeof(importData))
+    console.log(importData);
+
+    console.log('hello')
+
+    if (isJsonString(importData)){
+        try {
+            importData = JSON.parse(importData)
+            console.log(importData)
+            figureTool.fromJson(importData[0])
+            console.log('ITOWRKELDKJALKJ')
+        } catch {
+            console.log('NOOIJEKLJLKJE')
+        }
+        }  
+    }
+jsonButton.addEventListener('click', importJson);
+
 let jsonData ;
 
 jsonEntryBox.addEventListener('click', function(e){
     jsonData = e.target.value;
+    console.log(e.target)
     console.log(jsonData);  
     console.log(isJsonString(jsonData));
     } 
-
-
 )
+
 
 
 async function getJson(){
@@ -110,18 +135,5 @@ async function getJson(){
     return data[0]
 }
 
-let myObject = getJson()
-    myObject.then(data => figureTool.fromJson(data))
-
-// myString = 'barrackstechlab'
-
-// if(myString.includes('barrac')){
-//     console.log('yep');
-// } else {
-//     console.log('nah');
-// }
-
-// console.log(myString.split('techlab'))
-
-// let mySplitString = myString.split('barracks');
-// console.log(mySplitString);
+// let myObject = getJson()
+//     myObject.then(data => figureTool.fromJson(data))
