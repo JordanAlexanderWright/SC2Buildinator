@@ -84,11 +84,6 @@ class figureCreator{
             // Creating an array of elements to iterate over + appending to new row
 
             let createdElements = [productionData, supplyData, timeData, deleteButton];
-
-        //    console.log(createdElements.every(element => element === "asdf"))
-        //    createdElements.forEach(element => console.log(typeof(element)));
-
-
             createdElements.forEach((data) => tableRow.append(data));
 
             // appending new row to table
@@ -105,7 +100,7 @@ class figureCreator{
 
         // Getting the player 1 data
      
-        let build1 = data['player1']['build']
+        let build1 = data['build']
     
         for(let x in build1){
             
@@ -126,6 +121,7 @@ class figureCreator{
                 parsedProduction = 'reactor'
             } 
             
+            console.log('adding to table')
             this.addTableData(parsedProduction, minutes, seconds, supply);
             
         }

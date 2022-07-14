@@ -106,9 +106,10 @@ function importJson(){
         try {
             importData = JSON.parse(importData)
             console.log(importData)
-            figureTool.fromJson(importData[0])
+            figureTool.fromJson(importData)
             console.log('ITOWRKELDKJALKJ')
         } catch {
+            console.log(importData)
             console.log('NOOIJEKLJLKJE')
         }
         }  
