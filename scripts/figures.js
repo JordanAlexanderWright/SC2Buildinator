@@ -49,101 +49,10 @@ class figureCreator{
 
     }
 
-    fromJson = (data) =>{
+    addTableData(parsedProduction, minutes, seconds, supply) {
 
-        // Getting the player 1 data
-     
-        let build1 = data['player1']['build']
-    
-        for(let x in build1){
-            
-            let production = build1[x][0]
-            let minutes = Math.floor(build1[x][1] / 60)
-            let seconds = build1[x][1] % 60
-            let supply = build1[x][2]
-            
-            let parsedProduction = production.toLowerCase().split(' ').join('');
-            
-            // Check to see if the production is an add on, and fixing the format if so
-
-            if(parsedProduction.includes('techlab')){
-                parsedProduction = 'techlab'
-            } 
-            
-            if (parsedProduction.includes('reactor')) {
-                parsedProduction = 'reactor'
-            }            
-
-            let formValues = [minutes, seconds, supply, parsedProduction]
-
-                if (formValues.every(value => value !== "") && this.typeChecker(parsedProduction)){
-
-                    let time = `${minutes}:${seconds}`;
-                    let tableRow = document.createElement('tr');
-        
-                    // Counter to be able to access this data by it's class. 
-                    tableRow.id = `tableRow-${this.tableRowCounter + 1}`;
-                    console.log(tableRow.id);
-        
-                    let productionData = document.createElement('td');
-                    productionData.innerHTML =  parsedProduction;            
-                    productionData.classList.add('production');
-        
-                    let supplyData = document.createElement('td');
-                    supplyData.innerHTML = supply;
-                    supplyData.classList.add('supply');
-        
-                    let timeData = document.createElement('td');
-                    timeData.innerHTML = time;
-                    timeData.classList.add('time');
-        
-                    let deleteButton = document.createElement('td');
-                    let deleteLink = document.createElement('a');        
-                    deleteLink.href="#";
-                    deleteLink.innerHTML = "x"
-                    deleteLink.classList.add('deleteButton');
-        
-                    deleteButton.append(deleteLink);
-        
-                    // Creating an array of elements to iterate over + appending to new row
-        
-                    let createdElements = [productionData, supplyData, timeData, deleteButton];
-        
-                //    console.log(createdElements.every(element => element === "asdf"))
-                //    createdElements.forEach(element => console.log(typeof(element)));
-        
-        
-                    createdElements.forEach((data) => tableRow.append(data));
-        
-                    // appending new row to table
-        
-                    createdElements.forEach((data) => tableRow.append(data));
-                    document.getElementById('buildOrderBody').append(tableRow);            
-                    
-                } else {
-                    alert(`There's a problem with your form values.`);
-                }
-            } 
-            
-        }
-    
-    
-    // Method needs to be defined like this in order to have access to this.properties. 
-    getData = () => {
-
-       //Getting the values of all elements
-       let minutes = document.getElementById('minuteSelector').value;
-       let seconds = document.getElementById('secondSelector').value;
-       let supply = document.getElementById('supplySelector').value;
-       let production = document.getElementById('objectSelector').value;
-
-       let parsedProduction = production.split(' ').join('');
-
-       //Putting values into an array for validation
-       let formValues = [minutes, seconds, supply, parsedProduction]
-
-       // If all entries contain a value + the production object is valid, continue. Else throw an error
-       if (formValues.every(value => value !== "") && this.typeChecker(parsedProduction)){
+        let formValues = [parsedProduction, minutes, seconds, supply]
+        if (formValues.every(value => value !== "") && this.typeChecker(parsedProduction)){
 
             let time = `${minutes}:${seconds}`;
             let tableRow = document.createElement('tr');
@@ -153,7 +62,7 @@ class figureCreator{
             console.log(tableRow.id);
 
             let productionData = document.createElement('td');
-            productionData.innerHTML =  production;            
+            productionData.innerHTML =  parsedProduction;            
             productionData.classList.add('production');
 
             let supplyData = document.createElement('td');
@@ -190,6 +99,52 @@ class figureCreator{
         } else {
             alert(`There's a problem with your form values.`);
         }
-    } 
+    }
 
+    fromJson = (data) =>{
+
+        // Getting the player 1 data
+     
+        let build1 = data['player1']['build']
+    
+        for(let x in build1){
+            
+            let production = build1[x][0]
+            let minutes = Math.floor(build1[x][1] / 60)
+            let seconds = build1[x][1] % 60
+            let supply = build1[x][2]
+            
+            let parsedProduction = production.toLowerCase().split(' ').join('');
+            
+            // Check to see if the production is an add on, and fixing the format if so
+
+            if(parsedProduction.includes('techlab')){
+                parsedProduction = 'techlab'
+            } 
+            
+            if (parsedProduction.includes('reactor')) {
+                parsedProduction = 'reactor'
+            } 
+            
+            this.addTableData(parsedProduction, minutes, seconds, supply);
+            
+        }
+    }
+    
+    
+    // Method needs to be defined like this in order to have access to this.properties. 
+    getData = () => {
+
+       //Getting the values of all elements
+       let minutes = document.getElementById('minuteSelector').value;
+       let seconds = document.getElementById('secondSelector').value;
+       let supply = document.getElementById('supplySelector').value;
+       let production = document.getElementById('objectSelector').value;
+
+       let parsedProduction = production.split(' ').join('');
+
+       console.log('trying');
+       this.addTableData(parsedProduction, minutes, seconds, supply)
+
+    }
 }
