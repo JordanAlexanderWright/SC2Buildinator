@@ -32,7 +32,7 @@ class figureCreator{
         let figureImage = document.createElement('img');
         let productionType = this.typeChecker(productionName)
         console.log(productionType);
-        figureImage.src = `/resources/icons/${productionType}/${productionName}.png`
+        figureImage.src = `resources/icons/${productionType}/${productionName}.png`
 
         let figureLabel = document.createElement('figcaption');
         figureLabel.innerHTML = `${productionName}`;
