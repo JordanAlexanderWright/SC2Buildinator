@@ -1,6 +1,6 @@
 // Creating a worker, and a figure handler from my figure class in figures.js
 
-const myWorker = new Worker('../scripts/worker.js');
+const myWorker = new Worker('scripts/worker.js');
 let figureTool = new figureCreator();
 
 // this Sets up what will happen when I recieve data from my worker
