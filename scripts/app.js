@@ -97,23 +97,15 @@ function importJson(){
 
     let importData = jsonEntryBox.value;
 
-    console.log(typeof(importData))
-    console.log(importData);
-
-    console.log('hello')
-
     if (isJsonString(importData)){
         try {
             importData = JSON.parse(importData)
-            console.log(importData)
             figureTool.fromJson(importData)
-            console.log('ITOWRKELDKJALKJ')
         } catch {
-            console.log(importData)
-            console.log('NOOIJEKLJLKJE')
+            alert('Something Went Wrong')
         }
-        }  
-    }
+    }  
+}
 jsonButton.addEventListener('click', importJson);
 
 let jsonData ;

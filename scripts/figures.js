@@ -112,6 +112,7 @@ class figureCreator{
             let parsedProduction = production.toLowerCase().split(' ').join('');
             
             // Check to see if the production is an add on, and fixing the format if so
+            // Also fixing supplydepot (can be read as supplydepotlowered)
 
             if(parsedProduction.includes('techlab')){
                 parsedProduction = 'techlab'
@@ -120,6 +121,10 @@ class figureCreator{
             if (parsedProduction.includes('reactor')) {
                 parsedProduction = 'reactor'
             } 
+
+            if(parsedProduction.includes('lowered')){
+                parsedProduction = 'supplydepot'
+            }
             
             console.log('adding to table')
             this.addTableData(parsedProduction, minutes, seconds, supply);
@@ -128,7 +133,8 @@ class figureCreator{
     }
     
     
-    // Method needs to be defined like this in order to have access to this.properties. 
+    // Method needs to be defined like this in order to have access to this.properties
+    // This methods gets the data from the user form, then passes it to add to table
     getData = () => {
 
        //Getting the values of all elements
