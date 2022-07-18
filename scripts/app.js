@@ -99,38 +99,26 @@ function importJson(){
 
     if (isJsonString(importData)){
         try {
-            importData = JSON.parse(importData)
-            figureTool.fromJson(importData)
+            importData = JSON.parse(importData);
+            figureTool.fromJson(importData);
         } catch(err) {
-            console.log(err)
-            alert('Something Went Wrong')
+            console.log(err);
+            alert(`There's a problem with your JSON data`);
         }
     }  
 }
 jsonButton.addEventListener('click', importJson);
-
-let jsonData ;
-
-jsonEntryBox.addEventListener('click', function(e){
-    jsonData = e.target.value;
-    console.log(e.target)
-    console.log(jsonData);  
-    console.log(isJsonString(jsonData));
-    } 
-)
 
 async function getJson(){
 
     const response = await fetch('../resources/icons/testjson.json')
     const data = await response.json();
 
-    return data[0]
+    return data[0];
 }
 
 // console.log(figureTool.parsedUpgrades)
 
 
-console.log(figureTool.terranUnits);
-console.log(Object.keys(figureTool.terranUnits));
 // let myObject = getJson()
 //     myObject.then(data => figureTool.fromJson(data))

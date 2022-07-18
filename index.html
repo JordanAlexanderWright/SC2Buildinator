@@ -11,15 +11,22 @@
 <body class="terran" id="mainBody">
 
     <nav id="navigation">
+        <div class="invisibleBox">
+
+        </div>
         <ul id="raceSelector">
-            <li><h1><a href="#" id="protossSelector" class="notSelected">Protoss</a></li></h1>
-            <li><h1><a href="#" id="terranSelector" class="selected">Terran</a></li></h1>
-            <li><h1><a href="#" id="zergSelector" class="notSelected">Zerg</a></li></h1>
+            <li><h2><a href="#" id="protossSelector" class="notSelected">Protoss</a></li></h1>
+            <li><h2><a href="#" id="terranSelector" class="selected">Terran</a></li></h1>
+            <li><h2><a href="#" id="zergSelector" class="notSelected">Zerg</a></li></h1>
+        </ul>
+
+        <ul class="inputType">
+            <li><h2><a href="#" id="manualSelector" class="notSelected">Manual Input</a></li></h1>
+            <li><h2><a href="#" id="jsonSelector" class="notSelected">Json Input</a></li></h1>
         </ul>
     </nav>
 
     <div class="inputs">
-
    
         <form action="" class="buildMaker">
 
@@ -41,7 +48,7 @@
           
         </form>
 
-        <div class="fromJson" >
+        <div class="fromJson" id="fromJson">
             <textarea name="" id="jsonEntry" cols="40" rows="30">
             
             </textarea>

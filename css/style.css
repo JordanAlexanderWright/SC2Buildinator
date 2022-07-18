@@ -25,6 +25,21 @@ body {
 
 nav{
     border-bottom:3px solid black;
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.invisibleBox {
+    min-width: 250px;
+}
+
+.inputType {
+    min-width: 250px;
+}
+
+.inputType li {
+    list-style: none;
 }
 
 /* nav a, nav a:link, nav a:visited {
@@ -89,30 +104,36 @@ a, a:link, a:visited {
             font-size: 1em;
         }
     }
-    
+
+
 /* The Following Styles Apply for the User Inputs*/
 .buildMaker{
-    
-    display: grid;
-   
+
+    display: grid;   
     justify-content: center;
     max-height: 200px;
     grid: "typeSelector"
           "userInputs " 
 }
 
-.fromjson{
+.fromJson{
+    justify-content: center;
+    max-width: max-content;
+    /* min-height: 500px; */
+}
 
-    min-height: 500px;
+#jsonEntry{
+    background-color:lightblue;
+    justify-self: center;
 }
 
 .inputs {
     display: flex;
-    min-width:1000px;
+    flex-direction: column;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
     margin-top: 15px;
+    align-items: center;
 }
 
 #inputHeader{
@@ -248,6 +269,26 @@ figure.goAway{
             opacity: 0%
         }
     }
+
+
+.hide {
+    
+    animation-duration: 1s;
+    animation-name: disappear;
+    animation-play-state:running;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+    
+@keyframes disappear {
+    from {
+        opacity: 100%
+    } to {
+        visibility: hidden;
+        opacity: 0;
+    } 
+}
 
 
 

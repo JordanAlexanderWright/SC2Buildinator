@@ -49,3 +49,29 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
     }
    
 })
+
+document.getElementById('manualSelector').addEventListener('click', function(e){
+  
+    let jsonField = document.getElementById('fromJson');
+    console.log('yep')
+
+    if (jsonField.classList.contains('hide')){
+        
+    } else {
+        jsonField.classList.add('hide');
+        document.getElementById('userInputs').classList.remove('hide');
+    }
+});
+
+
+document.getElementById('jsonSelector').addEventListener('click', function(e){
+    let userInputs = document.getElementById('userInputs');
+
+    if (userInputs.classList.contains('hide')){
+        
+    } else {
+        userInputs.classList.add('hide');
+        document.getElementById('fromJson').classList.remove('hide');
+    }
+
+});
