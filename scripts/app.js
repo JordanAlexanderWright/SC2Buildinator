@@ -118,8 +118,6 @@ jsonEntryBox.addEventListener('click', function(e){
     } 
 )
 
-
-
 async function getJson(){
 
     const response = await fetch('../resources/icons/testjson.json')
@@ -127,6 +125,8 @@ async function getJson(){
 
     return data[0]
 }
+
+console.log(figureTool.parsedUpgrades)
 
 // let myObject = getJson()
 //     myObject.then(data => figureTool.fromJson(data))

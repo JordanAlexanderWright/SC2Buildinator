@@ -4,22 +4,36 @@ class figureCreator{
         this.figureContainer = document.getElementById('counterContainer');
         this.terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
                             'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
+
         this.terranBuildings = ['armory', 'barracks', 'bunker', 'commandcenter', 'engineeringbay', 'factory', 'fusioncore', 'ghostacademy', 
                                 'missleturret', 'orbitalcommand', 'reactor', 'refinery', 'sensortower', 'starport', 'supplydepot',
-                                'techlab'];
-        this.terranUpgrades = ['placeholder'];
+                                'techlab', 'planetaryfortress'];
+
+        this.terranUpgrades = ['ResearchCombatShield', 'ResearchInfernalPreIgniter', 'ResearchStimpack', 'ResearchCycloneLockOnDamageUpgrade', 'ResearchCloakingField', 'UpgradeVehicleWeapons1', 
+                        'ResearchDrillingClaws', 'ResearchSmartServos', 'ResearchCorvidReactor', 'ResearchConcussiveShells', 'ResearchTerranVehicleAndShipArmorsLevel1', 'UpgradeTerranInfantryWeapons1', 
+                        'UpgradeTerranInfantryArmor1', 'UpgradeVehicleWeapons2', 'ResearchBansheeSpeed', 'ResearchPersonalCloaking', 'ResearchMedivacIncreaseSpeedBoost', 
+                        'ResearchWeaponRefit', 'ResearchBehemothReactor', 'ResearchEnhancedShockwaves', 'UpgradeTerranInfantryWeapons2', 'UpgradeTerranInfantryArmor2', 'ResearchHiSecAutoTracking', 'UpgradeStructureArmor',
+                        'ResearchTerranVehicleAndShipArmorsLevel2', 'UpgradeShipWeapons1', 'UpgradeVehicleWeapons3', 'UpgradeVehicleWeapons3', 'UpgradeTerranInfantryWeapons3', 
+                        'UpgradeTerranInfantryArmor3', 'UpgradeShipWeapons2', 'ResearchTerranVehicleAndShipArmorsLevel3', 'UpgradeShipWeapons3'];
+        this.parsedUpgrades = []
+        
+        for (let index = 0; index < this.terranUpgrades.length; index++) {
+            this.parsedUpgrades.push(this.terranUpgrades[index].toLowerCase())
+        }
+
         this.tableRowCounter = 1;
     }
 
     // A simple checker to see if the production is a valid input
-    typeChecker(productionName){
+    typeChecker = (productionName) =>{
         if (this.terranUnits.includes(productionName)){
             return 'units';
         } if (this.terranBuildings.includes(productionName)){
             return 'buildings';
-        } if (this.terranUpgrades.includes(productionName)){
-            return 'upgrades';
+        } if (this.parsedUpgrades.includes(productionName)){
+            return 'upgrades'
         } else {
+            console.log(productionName)
             return false;
         }
     }
@@ -31,7 +45,7 @@ class figureCreator{
 
         let figureImage = document.createElement('img');
         let productionType = this.typeChecker(productionName)
-        console.log(productionType);
+    
         figureImage.src = `resources/icons/${productionType}/${productionName}.png`
 
         let figureLabel = document.createElement('figcaption');
@@ -52,6 +66,7 @@ class figureCreator{
     addTableData(parsedProduction, minutes, seconds, supply) {
 
         let formValues = [parsedProduction, minutes, seconds, supply]
+   
         if (formValues.every(value => value !== "") && this.typeChecker(parsedProduction)){
 
             let time = `${minutes}:${seconds}`;
@@ -59,7 +74,6 @@ class figureCreator{
 
             // Counter to be able to access this data by it's class. 
             tableRow.id = `tableRow-${this.tableRowCounter + 1}`;
-            console.log(tableRow.id);
 
             let productionData = document.createElement('td');
             productionData.innerHTML =  parsedProduction;            
@@ -126,7 +140,6 @@ class figureCreator{
                 parsedProduction = 'supplydepot'
             }
             
-            console.log('adding to table')
             this.addTableData(parsedProduction, minutes, seconds, supply);
             
         }
@@ -145,8 +158,8 @@ class figureCreator{
 
        let parsedProduction = production.split(' ').join('');
 
-       console.log('trying');
        this.addTableData(parsedProduction, minutes, seconds, supply)
 
     }
 }
+
