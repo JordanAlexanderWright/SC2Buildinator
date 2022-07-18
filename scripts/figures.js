@@ -84,7 +84,6 @@ class figureCreator{
     // A simple checker to see if the production is a valid input
     typeChecker = (parsedProduction) => {
 
-
         if (Object.keys(this.terranUnits).includes(parsedProduction)){
             return 'units';
         } if (Object.keys(this.terranBuildings).includes(parsedProduction)){
@@ -108,7 +107,21 @@ class figureCreator{
         figureImage.src = `resources/icons/${productionType}/${productionName}.png`
 
         let figureLabel = document.createElement('figcaption');
-        figureLabel.innerHTML = `${productionName}`;
+        
+        let displayName;
+
+        switch(productionType){
+            case 'units':
+                displayName = this.terranUnits[productionName]
+                break;
+            case 'buildings':
+                displayName = this.terranBuildings[productionName]
+                break;
+            case 'upgrades':
+                displayName = this.terranUpgrades[productionName]
+        }
+
+        figureLabel.innerHTML = `${displayName}`;
 
         let figureTimer = document.createElement('figcaption');
         figureTimer.innerHTML = 'Timer';
@@ -119,7 +132,6 @@ class figureCreator{
         newFigure.append(figureTimer);
 
         this.figureContainer.append(newFigure);
-
     }
 
     addTableData(parsedProduction, minutes, seconds, supply) {
