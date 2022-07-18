@@ -124,7 +124,7 @@ class figureCreator{
         figureLabel.innerHTML = `${displayName}`;
 
         let figureTimer = document.createElement('figcaption');
-        figureTimer.innerHTML = 'Timer';
+        figureTimer.innerHTML = '0';
         figureTimer.id = timerId;
 
         newFigure.append(figureImage);

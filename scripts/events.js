@@ -50,16 +50,17 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
    
 })
 
+let jsonField = document.getElementById('fromJson');
+let userInputs = document.getElementById('userInputs');
+
 document.getElementById('manualSelector').addEventListener('click', function(e){
   
-    let jsonField = document.getElementById('fromJson');
-    console.log('yep')
-
     if (jsonField.classList.contains('hide')){
         
     } else {
         jsonField.classList.add('hide');
-        document.getElementById('userInputs').classList.remove('hide');
+        userInputs.classList.remove('hide');
+        userInputs.style.display = 'grid';
     }
 });
 
@@ -71,7 +72,16 @@ document.getElementById('jsonSelector').addEventListener('click', function(e){
         
     } else {
         userInputs.classList.add('hide');
-        document.getElementById('fromJson').classList.remove('hide');
+        jsonField.classList.remove('hide');
+        jsonField.style.removeProperty('display')
     }
 
 });
+
+jsonField.addEventListener('animationend', () => {
+    jsonField.style.display = 'none'
+})
+
+userInputs.addEventListener('animationend', () => {
+    userInputs.style.display = 'none'
+})
