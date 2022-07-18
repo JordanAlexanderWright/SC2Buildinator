@@ -2,38 +2,97 @@ class figureCreator{
 
     constructor(){
         this.figureContainer = document.getElementById('counterContainer');
-        this.terranUnits = ['scv', 'banshee', 'battlecruiser', 'cyclone', 'ghost', 'hellbat', 'hellion', 'liberator', 'marauder', 
-                            'marine', 'medivac', 'mule', 'raven', 'reaper', 'siegetank', 'thor', 'viking', 'widowmine'];
+        this.tableRowCounter = 1;
 
-        this.terranBuildings = ['armory', 'barracks', 'bunker', 'commandcenter', 'engineeringbay', 'factory', 'fusioncore', 'ghostacademy', 
-                                'missleturret', 'orbitalcommand', 'reactor', 'refinery', 'sensortower', 'starport', 'supplydepot',
-                                'techlab', 'planetaryfortress'];
-
-        this.terranUpgrades = ['ResearchCombatShield', 'ResearchInfernalPreIgniter', 'ResearchStimpack', 'ResearchCycloneLockOnDamageUpgrade', 'ResearchCloakingField', 'UpgradeVehicleWeapons1', 
-                        'ResearchDrillingClaws', 'ResearchSmartServos', 'ResearchCorvidReactor', 'ResearchConcussiveShells', 'ResearchTerranVehicleAndShipArmorsLevel1', 'UpgradeTerranInfantryWeapons1', 
-                        'UpgradeTerranInfantryArmor1', 'UpgradeVehicleWeapons2', 'ResearchBansheeSpeed', 'ResearchPersonalCloaking', 'ResearchMedivacIncreaseSpeedBoost', 
-                        'ResearchWeaponRefit', 'ResearchBehemothReactor', 'ResearchEnhancedShockwaves', 'UpgradeTerranInfantryWeapons2', 'UpgradeTerranInfantryArmor2', 'ResearchHiSecAutoTracking', 'UpgradeStructureArmor',
-                        'ResearchTerranVehicleAndShipArmorsLevel2', 'UpgradeShipWeapons1', 'UpgradeVehicleWeapons3', 'UpgradeVehicleWeapons3', 'UpgradeTerranInfantryWeapons3', 
-                        'UpgradeTerranInfantryArmor3', 'UpgradeShipWeapons2', 'ResearchTerranVehicleAndShipArmorsLevel3', 'UpgradeShipWeapons3'];
-        this.parsedUpgrades = []
-        
-        for (let index = 0; index < this.terranUpgrades.length; index++) {
-            this.parsedUpgrades.push(this.terranUpgrades[index].toLowerCase())
+        this.terranUnits = {
+            'scv': 'SCV',
+            'banshee': "Banshee",
+            'battlecruiser': 'Battle Cruiser',
+            'cyclone': 'Cyclone',
+            'ghost': 'Ghost',
+            'hellbat': 'Hellbat',
+            'hellion': 'Hellion',
+            'liberator': 'Liberator',
+            'marauder': 'Marauder',
+            'marine': 'Marine',
+            'medivac': 'Medivac',
+            'mule': 'Mule',
+            'raven': 'Raven',
+            'reaper': 'Reaper',
+            'siegetank': 'Siege Tank',
+            'thor': 'Thor',
+            'viking': 'Viking',
+            'widowmine': 'Widow Mine'
         }
 
-        this.tableRowCounter = 1;
+        this.terranBuildings = {
+            'armory': 'Armory',
+            'barracks': 'Barracks',
+            'bunker': 'Bunker', 
+            'commandcenter': 'Command Center',
+            'engineeringbay': 'Engineering Bay',
+            'factory': 'Factory',
+            'fusioncore': 'Fusion Core',
+            'ghostacademy': 'Ghost Academy',
+            'missleturret': 'Missile Turret',
+            'orbitalcommand': 'Orbital Command',
+            'reactor': 'Reactor',
+            'refinery': 'Refinery',
+            'sensortower': 'Sensor Tower',
+            'starport': 'Star Port',
+            'supplydepot': 'Supply Depot', 
+            'techlab': 'Tech Lab',
+            'planetaryfortress': 'Planetary Fortress'
+        }
+        
+        this.terranUpgrades = {
+            'researchcombatshield': 'Combat Shield',
+            'researchinfernalpreigniter': 'Infernal Pre-Igniter',
+            'researchstimpack': 'Stimpack',
+            'researchcyclonelockondamageupgrade': 'Mag-Field Accelerator',
+            'researchcloakingfield': 'Cloaking Field',
+            'upgradevehicleweapons1': 'Vehicle Weapons +1',
+            'researchdrillingclaws': 'Drilling Claws',
+            'researchsmartservos': 'Smart Servos',
+            'researchcorvidreactor': 'Corvid Reactor',
+            'researchconcussiveshells': 'Concussive Shells',
+            'researchterranvehicleandshiparmorslevel1': 'Vehicle and Ship Armor +1',
+            'upgradeterraninfantryweapons1': 'Infantry Weapons +1',
+            'upgradeterraninfantryarmor1': 'Infantry Armor +1',
+            'upgradevehicleweapons2': 'Vehicle Weapons 2', 
+            'researchbansheespeed': 'Hyperflight Rotors',
+            'researchpersonalcloaking': 'Personal Cloaking',
+            'researchmedivacincreasespeedboost': 'Rapid Reignition System',
+            'researchweaponrefit': 'Weapon Refit',
+            'researchbehemothreactor': 'Behemoth Reactor',
+            'researchenhancedshockwaves': 'Enhanced Shockwaves',
+            'upgradeterraninfantryweapons2': 'Infantry Weapons +2',
+            'upgradeterraninfantryarmor2': 'Infantry Armor +2',
+            'researchhisecautotracking': 'Hi-Sec Auto Tracking',
+            'upgradestructurearmor': 'Neosteel Armor',
+            'researchterranvehicleandshiparmorslevel2': 'Vehicle and Ship Armor +2',
+            'upgradeshipweapons1': 'Ship Weapons +1',
+            'upgradevehicleweapons3': 'Vehicle Weapons +3',
+            'upgradeterraninfantryweapons3': 'Infantry Weapons +3',
+            'upgradeterraninfantryarmor3': 'Infantry Armor +3',
+            'upgradeshipweapons2': 'Ship Weapons +2',
+            'researchterranvehicleandshiparmorslevel3': 'Vehicle and Ship Armos +3',
+            'upgradeshipweapons3': 'Ship Weapons +3'
+        }
     }
 
     // A simple checker to see if the production is a valid input
-    typeChecker = (productionName) =>{
-        if (this.terranUnits.includes(productionName)){
+    typeChecker = (parsedProduction) => {
+
+
+        if (Object.keys(this.terranUnits).includes(parsedProduction)){
             return 'units';
-        } if (this.terranBuildings.includes(productionName)){
+        } if (Object.keys(this.terranBuildings).includes(parsedProduction)){
             return 'buildings';
-        } if (this.parsedUpgrades.includes(productionName)){
+        } if (Object.keys(this.terranUpgrades).includes(parsedProduction)){
             return 'upgrades'
         } else {
-            console.log(productionName)
+            console.log(parsedProduction)
             return false;
         }
     }
@@ -98,6 +157,7 @@ class figureCreator{
             // Creating an array of elements to iterate over + appending to new row
 
             let createdElements = [productionData, supplyData, timeData, deleteButton];
+            console.log(createdElements);
             createdElements.forEach((data) => tableRow.append(data));
 
             // appending new row to table

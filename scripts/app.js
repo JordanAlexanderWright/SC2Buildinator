@@ -101,7 +101,8 @@ function importJson(){
         try {
             importData = JSON.parse(importData)
             figureTool.fromJson(importData)
-        } catch {
+        } catch(err) {
+            console.log(err)
             alert('Something Went Wrong')
         }
     }  
@@ -126,7 +127,10 @@ async function getJson(){
     return data[0]
 }
 
-console.log(figureTool.parsedUpgrades)
+// console.log(figureTool.parsedUpgrades)
 
+
+console.log(figureTool.terranUnits);
+console.log(Object.keys(figureTool.terranUnits));
 // let myObject = getJson()
 //     myObject.then(data => figureTool.fromJson(data))
