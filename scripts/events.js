@@ -1,6 +1,4 @@
-let eventFigureTool = new figureCreator();
-
-document.getElementById('getInputData').addEventListener('click', figureTool.getData);
+document.getElementById('getInputData').addEventListener('click', dataManipulator.getData);
 
 // Getting the build order table then adding functionality to the delete button
 
@@ -11,7 +9,7 @@ document.getElementById('buildOrderTable').addEventListener('click', function(e)
     }
 });
 
-document.getElementById('formButton').addEventListener('click', makeFormFigure);
+document.getElementById('formButton').addEventListener('click', figureTool.makeFormFigures);
 
 // This chunk adds functionality to the nav buttons and lets CSS animations happen
 
@@ -109,7 +107,7 @@ function importJson(){
     if (isJsonString(importData)){
         try {
             importData = JSON.parse(importData);
-            figureTool.fromJson(importData);
+            dataManipulator.fromJson(importData);
         } catch(err) {
             console.log(err);
             alert(`There's a problem with your JSON data`);
