@@ -163,35 +163,40 @@ class dataHandler{
 
     fromJson = (data) =>{
 
+        let confirmation = confirm('This action will overwrite any data already on the table, do you want to proceed?');
         // Getting the player 1 data
-     
-        let build1 = data['build']
+        
+        if (confirmation){
+
+            this.clearTable();
+            let build1 = data['build'];
     
-        for(let x in build1){
-            
-            let production = build1[x][0]
-            let minutes = Math.floor(build1[x][1] / 60)
-            let seconds = build1[x][1] % 60
-            let supply = build1[x][2]
-            
-            let parsedProduction = production.toLowerCase().split(' ').join('');
-            
-            // Check to see if the production is an add on, and fixing the format if so
-            // Also fixing supplydepot (can be read as supplydepotlowered)
-
-            if(parsedProduction.includes('techlab')){
-                parsedProduction = 'techlab'
-            } 
-            
-            if (parsedProduction.includes('reactor')) {
-                parsedProduction = 'reactor'
-            } 
-
-            if(parsedProduction.includes('lowered')){
-                parsedProduction = 'supplydepot'
+            for(let x in build1){
+                
+                let production = build1[x][0];
+                let minutes = Math.floor(build1[x][1] / 60);
+                let seconds = build1[x][1] % 60;
+                let supply = build1[x][2];
+                
+                let parsedProduction = production.toLowerCase().split(' ').join('');
+                
+                // Check to see if the production is an add on, and fixing the format if so
+                // Also fixing supplydepot (can be read as supplydepotlowered)
+    
+                if(parsedProduction.includes('techlab')){
+                    parsedProduction = 'techlab';
+                } 
+                
+                if (parsedProduction.includes('reactor')) {
+                    parsedProduction = 'reactor';
+                } 
+    
+                if(parsedProduction.includes('lowered')){
+                    parsedProduction = 'supplydepot';
+                }
+                
+                this.addTableData(parsedProduction, minutes, seconds, supply);
             }
-            
-            this.addTableData(parsedProduction, minutes, seconds, supply);
             
         }
     }
@@ -216,7 +221,7 @@ class dataHandler{
 
         let tableData = document.getElementById('buildOrderBody').children;
         for (let index = tableData.length - 1 ; index >= 0; index--){
-            tableData[index].remove()
+            tableData[index].remove();
         }
     }
 }
