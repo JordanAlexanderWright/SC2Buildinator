@@ -1,4 +1,4 @@
-The Buildinator
+The SC2 Buildinator
 
 Project Goal:
 ---
@@ -35,10 +35,43 @@ the import field on the application, and the build order will be loaded into the
 **Code Louisville Requirements**
 ---
 
-Icon Packs
+In addition to providing the above description of the project, here are a few features
+I included:
 
-_ForgeUser7364532
-https://www.sc2mapster.com/projects/abilities-and-upgrades-icon-pack?page=4
-May be a deprecated name
+1. Create your own original CSS animation. The Race Selection at the top is animated, as is 
+the removal of unneeded input fields based on user selection. 
 
-Blizzard
+2. Using Flexbox and CSS Grid to organize content areas based on mobile or desktop views. 
+The race selector in the nav will collapse to a single row on mobile (as well as the rest of the nav).
+
+3. Create a form, validate at least one field, and use that information on your page. Both of the forms 
+of input on this page go through validation, and then allow a user to put information into the build table,
+then make a series of figures based on that data.
+
+4. Create and populate a JavaScript array with one or more values and display the contents of some or all of the array on your page. In essence, I am doing this with the table data in order to display all of the different build items as figures. I don't specifically save them as an array, but iterate through the table data in a similar fashion. 
+
+5. Create a JavaScript loop that dynamically displays HTML on your page. Essentially, I worked out a way using WebWorkers to create multiple instances of JavaScript that all create interval loops, and then update the data on 
+the application. 
+
+There's lots of other stuff, but that should cover my requirements.
+
+**Acknowledgements**
+---
+
+StarCraft 2 and all assest related to StarCraft all belong to Blizzard Entertainment, Inc.
+StarCraft® II: Wings of Liberty®
+
+©2010 Blizzard Entertainment, Inc. All rights reserved. Wings of Liberty is a trademark, and StarCraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
+
+StarCraft® II: Heart of the Swarm®
+
+©2013 Blizzard Entertainment, Inc. All rights reserved. Heart of the Swarm and StarCraft are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
+
+Unfortunately Blizzard doesn't also include a copyright notice on their webpage for StarCraft II: Legacy of the Void, but it applies here as well. 
+
+While I didn't end up using Icons from this website, it's a great resource for fan related assest and helped
+inspire me to come up with ideas of my own:
+SC2 Mapster: https://www.sc2mapster.com/
+
+I'd like to thank all of the Code Louisville mentors and staff that helped me learn, inspired me to push further,
+and provide excellent resources to use as I continued to learn more.
