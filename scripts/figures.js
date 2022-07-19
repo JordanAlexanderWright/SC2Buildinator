@@ -45,9 +45,7 @@ class figureCreator{
         // Loops through each build item and set their data into an object, for iteration. 
     
         for (let i = 0; i < buildItemCount; i++) {
-            console.log(buildItems[i].children[0])
-            console.log( buildItems[i].children[0].value)
-            console.log( buildItems[i].children[0].innerHTML)
+    
             myData[i] = {
                 'production': buildItems[i].children[0].value,                
                 'supply':  buildItems[i].children[1].innerHTML,

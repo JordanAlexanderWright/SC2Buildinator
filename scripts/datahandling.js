@@ -90,7 +90,6 @@ class dataHandler{
         } if (Object.keys(this.terranUpgrades).includes(parsedProduction)){
             return 'upgrades'
         } else {
-            console.log(parsedProduction)
             return false;
         }
     }
@@ -143,9 +142,6 @@ class dataHandler{
             productionData.value = parsedProduction;       
             productionData.classList.add('production');
 
-            console.log(productionData);
-            console.log(productionData.value);
-
             let supplyData = document.createElement('td');
             supplyData.innerHTML = supply;
             supplyData.classList.add('supply');
@@ -165,7 +161,7 @@ class dataHandler{
             // Creating an array of elements to iterate over + appending to new row
 
             let createdElements = [productionData, supplyData, timeData, deleteButton];
-            console.log(createdElements);
+           
             createdElements.forEach((data) => tableRow.append(data));
 
             // appending new row to table
