@@ -1,0 +1,24 @@
+/* Styles for the data table for the build*/
+.buildOrderList{
+    justify-content: center;
+    display: flex;
+}
+
+.buildOrderList table {    
+    min-width: 200px;
+    border-style: outset;
+}
+
+.buildOrderList tr {
+    background-color: lightblue;
+    text-align: center;
+    
+}
+
+.buildOrderList th {
+    margin-left: 20px;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    min-width: 250px;
+}

@@ -1,0 +1,81 @@
+
+/* The Following Styles Apply for the User Inputs*/
+.buildMaker {
+    display: grid;
+    justify-content: center;
+    max-height: 200px;
+    grid:
+      "typeSelector"
+      "userInputs ";
+  }
+  
+  .fromJson {
+    justify-content: center;
+    max-width: max-content;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /* min-height: 500px; */
+  }
+  
+  #jsonEntry {
+    background-color: lightblue;
+    justify-self: center;
+  }
+  
+  .jsonLabel {
+    color: white;
+  }
+  
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+    align-items: center;
+  }
+  
+  #inputHeader {
+    justify-self: center;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .typeSelector {
+    justify-self: center;
+    margin-bottom: 25px;
+    grid-area: "typeSelector";
+  }
+  
+  .userInputs {
+    grid-area: "userInputs";
+    display: grid;
+    row-gap: 3px;
+    max-width: 375px;
+    min-width: 250px;
+    grid-template-columns: 75% 25%;
+    background-color: lightblue;
+    border-color: grey;
+    border-style: outset;
+  }
+  
+  #objectSelector {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  
+  #minuteSelector,
+  #secondSelector,
+  #supplySelector {
+    margin-right: 1px;
+  }
+  
+  /*Styles for placeholder buttons */
+  .buttonContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  

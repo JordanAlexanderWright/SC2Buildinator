@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a,
+a:link,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.terran {
+  background: rgb(38, 46, 72);
+  background: linear-gradient(
+    to right,
+    rgba(38, 46, 72, 1) 0%,
+    rgba(84, 110, 148, 1) 50%,
+    rgba(136, 152, 143, 1) 100%
+  );
+  background-attachment: fixed;
+}
+
+.zerg {
+  background: linear-gradient(
+    to top right,
+    #3a0162 0%,
+    #3e055a 30%,
+    #7626b1 50%,
+    #592821 70%,
+    #6d1e1d 85%,
+    #3b0600 100%
+  );
+  background-attachment: fixed;
+}
+
+.protoss {
+  background: linear-gradient(
+    to bottom right,
+    rgb(34, 173, 238),
+    rgba(170, 154, 9, 0.808)
+  );
+  background-attachment: fixed;
+}
+
+nav {
+  border-bottom: 3px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.invisibleBox {
+  min-width: 250px;
+}
+
+.inputType {
+  min-width: 250px;
+}
+
+.inputType li {
+  list-style: none;
+}
+
+#raceSelector {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 25px;
+  margin-right: 36px;
+}
+
+#terranSelector {
+  color: blue;
+}
+
+#zergSelector {
+  color: #7626b1;
+}
+
+#protossSelector {
+  color: rgba(204, 185, 17, 0.808);
+}
+
+.selected {
+  animation-duration: 1s;
+  animation-name: selectedAnimation;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes selectedAnimation {
+  from {
+    font-size: 1em;
+  }
+  to {
+    font-size: 2em;
+  }
+}
+
+.notSelected {
+  animation-duration: 1s;
+  animation-name: notSelectedAnimation;
+  animation-play-state: running;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes notSelectedAnimation {
+  from {
+    font-size: 2em;
+  }
+  to {
+    font-size: 1em;
+  }
+}
