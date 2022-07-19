@@ -59,6 +59,7 @@ There's lots of other stuff, but that should cover my requirements.
 ---
 
 StarCraft 2 and all assest related to StarCraft all belong to Blizzard Entertainment, Inc.
+
 StarCraft® II: Wings of Liberty®
 
 ©2010 Blizzard Entertainment, Inc. All rights reserved. Wings of Liberty is a trademark, and StarCraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
