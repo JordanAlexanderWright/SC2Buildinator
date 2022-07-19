@@ -72,6 +72,7 @@ Unfortunately Blizzard doesn't also include a copyright notice on their webpage 
 
 While I didn't end up using Icons from this website, it's a great resource for fan related assest and helped
 inspire me to come up with ideas of my own:
+
 SC2 Mapster: https://www.sc2mapster.com/
 
 I'd like to thank all of the Code Louisville mentors and staff that helped me learn, inspired me to push further,

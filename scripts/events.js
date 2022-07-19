@@ -50,8 +50,16 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
    
 })
 
+// Json input related events
+
+// Getting all the elements to manipulate
+
 let jsonField = document.getElementById('fromJson');
 let userInputs = document.getElementById('userInputs');
+let jsonEntryBox = document.getElementById('jsonEntry');
+let jsonButton = document.getElementById('jsonButton');
+
+// Animation handling for the input types
 
 document.getElementById('manualSelector').addEventListener('click', function(e){
   
@@ -85,3 +93,21 @@ jsonField.addEventListener('animationend', () => {
 userInputs.addEventListener('animationend', () => {
     userInputs.style.display = 'none'
 })
+
+// Importing jsondata function
+
+function importJson(){
+
+    let importData = jsonEntryBox.value;
+
+    if (isJsonString(importData)){
+        try {
+            importData = JSON.parse(importData);
+            figureTool.fromJson(importData);
+        } catch(err) {
+            console.log(err);
+            alert(`There's a problem with your JSON data`);
+        }
+    }  
+}
+jsonButton.addEventListener('click', importJson);

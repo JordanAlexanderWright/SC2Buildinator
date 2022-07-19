@@ -89,25 +89,6 @@ function isJsonString(str) {
     return true;
 }
 
-let jsonEntryBox = document.getElementById('jsonEntry');
-let jsonButton = document.getElementById('jsonButton');
-
-
-function importJson(){
-
-    let importData = jsonEntryBox.value;
-
-    if (isJsonString(importData)){
-        try {
-            importData = JSON.parse(importData);
-            figureTool.fromJson(importData);
-        } catch(err) {
-            console.log(err);
-            alert(`There's a problem with your JSON data`);
-        }
-    }  
-}
-jsonButton.addEventListener('click', importJson);
 
 async function getJson(){
 
