@@ -95,6 +95,15 @@ class dataHandler{
         }
     }
 
+    isJson = (importedData) => {
+        try {
+            JSON.parse(importedData);
+        } catch (e) {
+            return false;
+        }
+        return true;
+    }
+
     getDisplayName = (parsedProduction) =>{
 
         let displayName

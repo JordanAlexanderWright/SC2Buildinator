@@ -104,7 +104,7 @@ function importJson(){
 
     let importData = jsonEntryBox.value;
 
-    if (isJsonString(importData)){
+    if (dataManipulator.isJson(importData)){
         try {
             importData = JSON.parse(importData);
             dataManipulator.fromJson(importData);

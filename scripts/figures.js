@@ -36,7 +36,6 @@ class figureCreator{
 
     makeFormFigures = () =>{
         
-        console.log('hello')
         // Getting table parent container, the count for use later, and the items for iteration. 
         const buildItemContainer = document.getElementById('buildOrderBody');
         const buildItemCount = buildItemContainer.children.length;

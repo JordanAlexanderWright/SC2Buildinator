@@ -29,19 +29,3 @@ function isJsonString(str) {
     }
     return true;
 }
-
-
-async function getJson(){
-
-    const response = await fetch('../resources/icons/testjson.json')
-    const data = await response.json();
-
-    return data[0];
-}
-
-// figureTool.clearTable();
-// console.log(figureTool.parsedUpgrades)
-
-
-// let myObject = getJson()
-//     myObject.then(data => figureTool.fromJson(data))
