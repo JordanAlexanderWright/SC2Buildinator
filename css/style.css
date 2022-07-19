@@ -119,7 +119,7 @@ a, a:link, a:visited {
 .fromJson{
     justify-content: center;
     max-width: max-content;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     /* min-height: 500px; */

@@ -73,7 +73,7 @@ document.getElementById('jsonSelector').addEventListener('click', function(e){
     } else {
         userInputs.classList.add('hide');
         jsonField.classList.remove('hide');
-        jsonField.style.removeProperty('display')
+        jsonField.style.display = 'flex'
     }
 
 });
