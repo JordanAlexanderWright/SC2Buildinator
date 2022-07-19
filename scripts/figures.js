@@ -11,15 +11,13 @@ class figureCreator{
         newFigure.classList.add('showing');
 
         let figureImage = document.createElement('img');
-        let productionType = dataManipulator.typeChecker(productionName)
-
-        console.log(productionType);
-    
+        let productionType = dataManipulator.typeChecker(productionName);
+        
         figureImage.src = `resources/icons/${productionType}/${productionName}.png`
 
         let figureLabel = document.createElement('figcaption');
         
-        let displayName = dataManipulator.getDisplayName(productionName);
+        let displayName = dataManipulator.getDisplayName(productionType, productionName);
 
         figureLabel.innerHTML = `${displayName}`;
 

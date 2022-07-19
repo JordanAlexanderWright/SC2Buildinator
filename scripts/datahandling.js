@@ -104,19 +104,20 @@ class dataHandler{
         return true;
     }
 
-    getDisplayName = (parsedProduction) =>{
+    getDisplayName = (type, parsedProduction) =>{
 
-        let displayName
+        let displayName;
 
-        switch(parsedProduction){
+        switch(type){
             case 'units':
-                displayName = this.terranUnits[parsedProduction]
+                displayName = this.terranUnits[parsedProduction]                
                 break;
             case 'buildings':
                 displayName = this.terranBuildings[parsedProduction]
                 break;
             case 'upgrades':
                 displayName = this.terranUpgrades[parsedProduction]
+                break;
         }
 
         return displayName
