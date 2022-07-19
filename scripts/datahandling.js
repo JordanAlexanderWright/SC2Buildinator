@@ -136,8 +136,15 @@ class dataHandler{
             tableRow.id = `tableRow-${this.tableRowCounter + 1}`;
 
             let productionData = document.createElement('td');
-            productionData.innerHTML =  parsedProduction;            
+
+            let productionType = this.typeChecker(parsedProduction)
+
+            productionData.innerHTML =  this.getDisplayName(productionType, parsedProduction);     
+            productionData.value = parsedProduction;       
             productionData.classList.add('production');
+
+            console.log(productionData);
+            console.log(productionData.value);
 
             let supplyData = document.createElement('td');
             supplyData.innerHTML = supply;
