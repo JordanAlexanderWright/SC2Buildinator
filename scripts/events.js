@@ -54,14 +54,16 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
 
 // Getting all the elements to manipulate
 
-let jsonField = document.getElementById('fromJson');
-let userInputs = document.getElementById('userInputs');
-let jsonEntryBox = document.getElementById('jsonEntry');
-let jsonButton = document.getElementById('jsonButton');
+const jsonField = document.getElementById('fromJson');
+const userInputs = document.getElementById('userInputs');
+const jsonEntryBox = document.getElementById('jsonEntry');
+const jsonButton = document.getElementById('jsonButton');
+const manualSelector = document.getElementById('manualSelector')
+const jsonSelector = document.getElementById('jsonSelector')
 
 // Animation handling for the input types
 
-document.getElementById('manualSelector').addEventListener('click', function(e){
+manualSelector.addEventListener('click', function(e){
   
     if (jsonField.classList.contains('hide')){
         
@@ -69,11 +71,13 @@ document.getElementById('manualSelector').addEventListener('click', function(e){
         jsonField.classList.add('hide');
         userInputs.classList.remove('hide');
         userInputs.style.display = 'grid';
+        manualSelector.style.borderBottom = 'solid 1px';
+        jsonSelector.style.removeProperty('border-bottom')
     }
 });
 
 
-document.getElementById('jsonSelector').addEventListener('click', function(e){
+jsonSelector.addEventListener('click', function(e){
     let userInputs = document.getElementById('userInputs');
 
     if (userInputs.classList.contains('hide')){
@@ -81,7 +85,9 @@ document.getElementById('jsonSelector').addEventListener('click', function(e){
     } else {
         userInputs.classList.add('hide');
         jsonField.classList.remove('hide');
-        jsonField.style.display = 'flex'
+        jsonField.style.display = 'flex';
+        jsonSelector.style.borderBottom = 'solid 1px';
+        manualSelector.style.removeProperty('border-bottom');
     }
 
 });
@@ -110,4 +116,5 @@ function importJson(){
         }
     }  
 }
+
 jsonButton.addEventListener('click', importJson);

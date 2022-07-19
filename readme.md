@@ -75,5 +75,11 @@ inspire me to come up with ideas of my own:
 
 SC2 Mapster: https://www.sc2mapster.com/
 
+I found this python library that helped give me direction on this project. It gave me ways to manipulate and get data from StarCraft 2 replays, and it's what I used
+to write the python scripts that enabled me to create JSON data to use in this application.
+
+https://github.com/GraylinKim/sc2reader
+
+
 I'd like to thank all of the Code Louisville mentors and staff that helped me learn, inspired me to push further,
 and provide excellent resources to use as I continued to learn more.

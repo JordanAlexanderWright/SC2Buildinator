@@ -98,6 +98,7 @@ async function getJson(){
     return data[0];
 }
 
+figureTool.clearTable();
 // console.log(figureTool.parsedUpgrades)
 
 

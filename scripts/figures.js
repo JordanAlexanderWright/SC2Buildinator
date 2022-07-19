@@ -233,5 +233,14 @@ class figureCreator{
        this.addTableData(parsedProduction, minutes, seconds, supply)
 
     }
+
+    clearTable = () => {
+
+        let tableData = document.getElementById('buildOrderBody').children;
+        console.log('del')
+        for (let index = tableData.length - 1 ; index >= 0; index--){
+            tableData[index].remove()
+        }
+    }
 }
 

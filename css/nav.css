@@ -1,5 +1,3 @@
-
-
 .terran {
   background: rgb(38, 46, 72);
   background: linear-gradient(
@@ -38,36 +36,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
-}
-
-.inputType {
-  min-width: 150px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.invisibleInputBox {
-  min-width: 150px;
-}
-
-#raceSelector, .inputType {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-}
-  
-.inputType li {
-  list-style: none;
-}
-
-#manualSelector{
-  border-bottom: solid 1px;
-}
-
-#jsonSelector{
-  border-bottom: solid 1px;
 }
 
 #raceSelector {
@@ -124,4 +93,24 @@ nav {
   to {
     font-size: 1em;
   }
+}
+
+.inputType {
+  min-width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.invisibleInputBox {
+  min-width: 150px;
+}
+
+#raceSelector, .inputType {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+  
+.inputType li {
+  list-style: none;
 }
