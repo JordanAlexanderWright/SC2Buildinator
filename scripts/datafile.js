@@ -98,17 +98,17 @@ protossUpgrades = {
     'researchgraviticboosters': 'Gravitic boosters',
     'upgradeairweapons2': 'Air Weapons +2',
     'upgradeairarmor2': 'Air Armor +2',
-    'upgradeshileds2': 'Shields +2',
+    'upgradeshields2': 'Shields +2',
     'upgradeairweapons3': 'Air Weapons +3',
     'upgradeairarmor3': 'Air Armor +3',
-    'upgradeshileds3': 'Shields +3'
+    'upgradesshields3': 'Shields +3'
 }
 
 protossUnits = {
     'probe': 'Probe',
     'zealot': 'Zealot',
     'sentry': 'Sentry',
-    'stalker': 'Stlaker',
+    'stalker': 'Stalker',
     'adept': 'Adept',
     'hightemplar': 'High Templar',
     'darktemplar': 'Dark Templar',
@@ -140,7 +140,7 @@ protossBuildings = {
     'twilightcouncil': 'Twilight Council',
     'roboticsfacility': 'Robotics Facility',
     'stargate': 'Stargate',
-    'templararchives': 'Templar Archives',
+    'templararchive': 'Templar Archives',
     'darkshrine': 'Dark Shrine',
     'roboticsbay': 'Robotics Bay',
     'fleetbeacon': 'Fleet Beacon'

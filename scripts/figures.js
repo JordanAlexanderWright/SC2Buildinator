@@ -13,7 +13,7 @@ class figureCreator{
         let figureImage = document.createElement('img');
         let productionType = dataManipulator.typeChecker(productionName);
         
-        figureImage.src = `resources/icons/${productionType}/${productionName}.png`
+        figureImage.src = `resources/icons/${raceState}/${productionType}/${productionName}.png`
 
         let figureLabel = document.createElement('figcaption');
         

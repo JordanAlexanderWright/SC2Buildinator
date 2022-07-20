@@ -122,6 +122,7 @@ class dataHandler{
             document.getElementById('buildOrderBody').append(tableRow);            
             
         } else {
+            console.log(parsedProduction)
             console.log('There is a problem with the data');
         }
     }
