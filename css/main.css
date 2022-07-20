@@ -74,8 +74,26 @@
   /*Styles for placeholder buttons */
   .buttonContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     margin-top: 10px;
     justify-content: center;
+    gap: 5px;
   }
+
+  #getInputData, 
+  #jsonButton,
+  #formButton,
+  #showBuildItems {
+    width: 150px;
+    border: 5px outset;
+  }
+
+  #getInputData:hover, 
+  #jsonButton:hover,
+  #formButton:hover,
+  #showBuildItems:hover {
+    text-decoration: underline;
+  }
+  
   

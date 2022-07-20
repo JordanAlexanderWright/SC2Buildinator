@@ -164,4 +164,4 @@ function showBuildItems(){
    
 }
 
-document.getElementById('showbuilditems').addEventListener('click', showBuildItems);
+document.getElementById('showBuildItems').addEventListener('click', showBuildItems);

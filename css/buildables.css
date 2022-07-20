@@ -1,8 +1,9 @@
 .buildItemDisplay {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     color:white;
     padding: 15px;
+    gap: 20px;
 }
