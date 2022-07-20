@@ -78,6 +78,78 @@ class dataHandler{
             'researchterranvehicleandshiparmorslevel3': 'Vehicle and Ship Armos +3',
             'upgradeshipweapons3': 'Ship Weapons +3'
         }
+
+        this.protossUpgrades = {
+            'upgradeairweapons1': 'Air Weapons +1',
+            'upgradegroundweapons1': 'Ground Weapons +1',
+            'upgradegroundarmor1': 'Ground Armor +1',
+            'researchcharge': 'Charge',
+            'upgradeairarmor1': 'Air Armor +1',
+            'upgradegroundweapons2': 'Ground Weapons +2',
+            'upgradegroundarmor2': 'Ground Armor +2',
+            'researchpsistormtech': 'Psi Storm',
+            'researchblink': 'Blink',
+            'researchdarktemplarblinkupgrade': 'Dark Templar Blink',
+            'researchwarpgate': 'Warp Gate',
+            'researchadeptpiercingattack': 'Piercing Attacks',
+            'researchextendedthermallance': 'Thermal Lance',
+            'upgradegroundweapons3': 'Ground Weapons +3',
+            'upgradegroundarmor3': 'Ground Armor +3',
+            'researchanionpulsecrystals': 'Anion Pulse Crystals',
+            'researchbosoniccore': 'Bosonic Core',
+            'researchgravitysling': 'Gravity Sling',
+            'upgradeshields1': 'Shields +1',
+            'researchgraviticdrive': 'Gravitic Drive',
+            'researchgraviticboosters': 'Gravitic boosters',
+            'upgradeairweapons2': 'Air Weapons +2',
+            'upgradeairarmor2': 'Air Armor +2',
+            'upgradeshileds2': 'Shields +2',
+            'upgradeairweapons3': 'Air Weapons +3',
+            'upgradeairarmor3': 'Air Armor +3',
+            'upgradeshileds3': 'Shields +3'
+        }
+
+        this.protossUnits = {
+            'probe': 'Probe',
+            'zealot': 'Zealot',
+            'sentry': 'Sentry',
+            'stalker': 'Stlaker',
+            'adept': 'Adept',
+            'hightemplar': 'High Templar',
+            'darktemplar': 'Dark Templar',
+            'archon': 'Arhcon',
+            'observer': 'Observer',
+            'warpprism': 'Warp Prism',
+            'immortal': 'Immortal',
+            'colossus': 'Colossus',
+            'disruptor': 'Disruptor',
+            'phoenix': 'Phoenix',
+            'voidray': 'Void Ray',
+            'oracle': 'Oracle',
+            'tempest': 'Tempest',
+            'carrier': 'Carrier',
+            'interceptor': 'Interceptor',
+            'mothership': 'Mothership'
+        }
+
+        this.protossBuildings = {
+            'nexus': 'Nexus',
+            'pylon': 'Pylon',
+            'assimilator': 'Assimilator',
+            'gateway': 'Gateway',
+            'forge': 'Forge',
+            'photoncannon': 'Photon Cannon',
+            'shieldbattery': 'Shield Battery',
+            'warpgate': 'Warp Gate',
+            'cyberneticscore': 'Cybernetics Core',
+            'twilightcouncil': 'Twilight Council',
+            'roboticsfacility': 'Robotics Facility',
+            'stargate': 'Stargate',
+            'templararchives': 'Templar Archives',
+            'darkshrine': 'Dark Shrine',
+            'roboticsbay': 'Robotics Bay',
+            'fleetbeacon': 'Fleet Beacon'
+        }
     }
 
     // A simple checker to see if the production is a valid input
