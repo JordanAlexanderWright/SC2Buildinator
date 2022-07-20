@@ -22,7 +22,7 @@ The best way to use the Buildinator, however, is by using the JSON import featur
 In order to make the usage of this application not tedious, I also created a script
 that allows a user to make a build order from any replay. 
 
-Please check out this script at the seperate github repo!
+Please check out this script at the seperate github repo!  
 https://github.com/Soule222/sc2tools
 
 The idea is that a user can either save these build files either on their own computer, or
