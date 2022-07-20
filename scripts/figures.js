@@ -30,6 +30,8 @@ class figureCreator{
         newFigure.append(figureTimer);
 
         this.figureContainer.append(newFigure);
+
+        
     }
 
     makeFormFigures = () =>{

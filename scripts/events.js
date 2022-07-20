@@ -130,25 +130,25 @@ function showBuildItems(){
         let unitDisplay = document.createElement('ul');
         unitDisplay.classList.add('unitDisplay');
     
-        for(const key in dataManipulator.terranUnits){
+        for(const key in dataManipulator.units){
             let listElement = document.createElement('li');
-            listElement.innerHTML = dataManipulator.terranUnits[key];
+            listElement.innerHTML = dataManipulator.units[key];
             unitDisplay.appendChild(listElement);
         }
     
         let buildingDisplay = document.createElement('ul');
         buildingDisplay.classList.add('buildingDisplay');
     
-        for(const key in dataManipulator.terranBuildings){
+        for(const key in dataManipulator.buildings){
             let listElement = document.createElement('li');
-            listElement.innerHTML = dataManipulator.terranBuildings[key];
+            listElement.innerHTML = dataManipulator.buildings[key];
             buildingDisplay.appendChild(listElement);
         }
     
         let upgradeDisplay = document.createElement('ul');
         upgradeDisplay.classList.add('upgradeDisplay');
     
-        for(const key in dataManipulator.terranUpgrades){
+        for(const key in dataManipulator.upgrades){
             let listElement = document.createElement('li');
             listElement.innerHTML = key;
             upgradeDisplay.appendChild(listElement);
@@ -163,5 +163,4 @@ function showBuildItems(){
     }
    
 }
-
 document.getElementById('showBuildItems').addEventListener('click', showBuildItems);
