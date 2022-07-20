@@ -5,7 +5,7 @@ Project Goal:
 The Goal of this is project was to make an online application that allows users to
 create/import starcraft 2 builds, then use those builds to practice from. 
 
-[![screenshot]]
+![screenshot]
 
 **Usage**
 ---
@@ -13,7 +13,7 @@ create/import starcraft 2 builds, then use those builds to practice from.
 To use the Buildinator, simply select what way you want to input your build,(Manually or
 via JSON import)
 
-[![screenshot2]]
+![screenshot2]
 
 When entering build items manually, simply type the object you want to build,
 add the time and supply, and click add to build.
