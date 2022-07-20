@@ -138,6 +138,8 @@ class dataHandler{
 
             let productionType = this.typeChecker(parsedProduction)
 
+            // Giving the table Data a display name, and then adding the parsed production as a value for later use. 
+            
             productionData.innerHTML =  this.getDisplayName(productionType, parsedProduction);     
             productionData.value = parsedProduction;       
             productionData.classList.add('production');
