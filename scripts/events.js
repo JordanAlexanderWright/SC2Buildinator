@@ -116,3 +116,52 @@ function importJson(){
 }
 
 jsonButton.addEventListener('click', importJson);
+
+function showBuildItems(){
+
+    if(document.querySelector('.buildItemDisplay')){
+        
+        document.querySelector('.buildItemDisplay').remove()
+
+    } else {
+        let itemContainer = document.createElement('div');
+        itemContainer.classList.add('buildItemDisplay');
+    
+        let unitDisplay = document.createElement('ul');
+        unitDisplay.classList.add('unitDisplay');
+    
+        for(const key in dataManipulator.terranUnits){
+            let listElement = document.createElement('li');
+            listElement.innerHTML = dataManipulator.terranUnits[key];
+            unitDisplay.appendChild(listElement);
+        }
+    
+        let buildingDisplay = document.createElement('ul');
+        buildingDisplay.classList.add('buildingDisplay');
+    
+        for(const key in dataManipulator.terranBuildings){
+            let listElement = document.createElement('li');
+            listElement.innerHTML = dataManipulator.terranBuildings[key];
+            buildingDisplay.appendChild(listElement);
+        }
+    
+        let upgradeDisplay = document.createElement('ul');
+        upgradeDisplay.classList.add('upgradeDisplay');
+    
+        for(const key in dataManipulator.terranUpgrades){
+            let listElement = document.createElement('li');
+            listElement.innerHTML = key;
+            upgradeDisplay.appendChild(listElement);
+        }    
+    
+        itemContainer.appendChild(unitDisplay);
+        itemContainer.appendChild(buildingDisplay);
+        itemContainer.appendChild(upgradeDisplay);
+    
+        const figureWrapper = document.getElementById('figureWrapper')
+        figureWrapper.parentElement.insertBefore(itemContainer, figureWrapper);
+    }
+   
+}
+
+document.getElementById('showbuilditems').addEventListener('click', showBuildItems);

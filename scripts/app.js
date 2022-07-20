@@ -20,12 +20,3 @@ myWorker.onmessage = function(message){
 myWorker.onerror = function(e){
     console.log(e);
 }
-
-function isJsonString(str) {
-    try {
-        JSON.parse(str);
-    } catch (e) {
-        return false;
-    }
-    return true;
-}

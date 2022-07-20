@@ -139,7 +139,7 @@ class dataHandler{
             let productionType = this.typeChecker(parsedProduction)
 
             // Giving the table Data a display name, and then adding the parsed production as a value for later use. 
-            
+
             productionData.innerHTML =  this.getDisplayName(productionType, parsedProduction);     
             productionData.value = parsedProduction;       
             productionData.classList.add('production');
@@ -172,7 +172,7 @@ class dataHandler{
             document.getElementById('buildOrderBody').append(tableRow);            
             
         } else {
-            alert(`There's a problem with your form values.`);
+            console.log('There is a problem with the data');
         }
     }
 
