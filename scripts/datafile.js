@@ -148,4 +148,48 @@ protossBuildings = {
 
 zergUnits = {}
 zergBuildings = {}
-zergUpgrades = {}
+zergUpgrades = {
+    'researchzergmeleeweaponslevel1': 'Melee Attacks +1',
+    'researchzergmeleeweaponslevel2': 'Melee Attacks +2',
+    'researchzergmeleeweaponslevel3': 'Melee Attacks +3',
+    'researchzergmissileweaponslevel1': 'Missile Attacks +1',
+    'researchzergmissileweaponslevel2': 'Missile Weapons +2',
+    'researchzergmissileweaponslevel3': 'Missile Attacks +3',
+    'researchzerggroundarmorslevel1': 'Ground Carapace +1',
+    'researchzerggroundarmorslevel2': 'Ground Carapace +2',
+    'researchzerggroundarmorslevel3': 'Ground Carapace +3',
+    'upgradetolair': 'Lair',   
+    'upgradetohive': 'Hive',
+    'researchevolvegroovedspines': 'Grooved Spines',    
+    'researchevolvemuscularaugments': 'Muscular Augments',
+    'researchoverlordspeed': 'Overlord Speed',
+    'researchanabolicsynthesis': 'Anabolic Synthesis',    
+    'researchburrow': 'Burrow',
+    'researchdiggingclaws': 'Adaptive Talons',
+    'researchflyerweaponslevel1': 'Flyer Attacks +1',
+    'researchflyerweaponslevel2': 'Flyer Attacks +2',
+    'researchflyerweaponselevel3': 'Flyer Attacks +3',
+    'researchzergflyerarmorslevel1': 'Flyer Carapace +1',
+    'researchzergflyerarmorslevel2': 'Flyer Carapace +2',
+    'researchzergflyerarmorslevel3': 'Flyer Carapace +3',
+}
+
+zergUpgrades = {
+    'zerglingmovementspeed': 'Metabolic Boost',
+    'zergmeleeweaponslevel1': 'Melee Attacks +1',
+    'zergmeleeweaponslevel2': 'Melee Attacks +2',
+    'zergmeleeweaponslevel2': 'Melee Attacks +3',
+    'zergmissileweaponslevel1': 'Missile Attacks +1',
+    'zergmissileweaponslevel2': 'Missile Attacks +2',
+    'zergmissileweaponslevel3': 'Missile Attacks +3',
+    'zerggroundarmorslevel1': 'Ground Carapace +1',
+    'zerggroundarmorslevel2': 'Ground Carapace +2',
+    'zerggroundarmorslevel3': 'Ground Carapace +3',
+    'zergflyerarmorslevel1': 'Flyer Carapace +1',
+    'zergflyerarmorslevel2': 'Flyer Carapace +2',
+    'zergflyerarmorslevel3': 'Flyer Carapace +3',
+    'zergflyerweaponslevel1': 'Flyer Attacks +1',
+    'zergflyerweaponslevel2': 'Flyer Attacks +2',
+    'zergflyerweaponslevel3': 'Flyer Attacks +3',
+   
+}
