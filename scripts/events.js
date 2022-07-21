@@ -38,7 +38,11 @@ document.getElementById('raceSelector').addEventListener('click', (e) => {
             }
     
             //Now changing the users input to be selected
-            e.target.classList.replace('notSelected', 'selected');     
+            e.target.classList.replace('notSelected', 'selected');    
+            
+            //Changing the racestate and re initializing what data sets are being used. 
+            raceState = e.target.innerHTML.toLowerCase();
+            dataManipulator = new dataHandler(raceState);
             
             // Changing the body class to allow for the page style to change with the race selection
             let bodyElement = document.getElementById('mainBody')

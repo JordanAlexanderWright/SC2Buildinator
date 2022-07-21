@@ -164,8 +164,6 @@ zergUnits = {
     'corruptor': 'Corruptor',
     'viper': 'Viper',
     'broodlord': 'Broodlord',
-    'spinecrawler': 'Spine Crawler',
-    'sporecrawler': 'Spore Crawler',
 }
 
 zergBuildings = {
@@ -190,7 +188,7 @@ zergUpgrades = {
    
     'zergmeleeweaponslevel1': 'Melee Attacks +1',
     'zergmeleeweaponslevel2': 'Melee Attacks +2',
-    'zergmeleeweaponslevel2': 'Melee Attacks +3',
+    'zergmeleeweaponslevel3': 'Melee Attacks +3',
     'zergmissileweaponslevel1': 'Missile Attacks +1',
     'zergmissileweaponslevel2': 'Missile Attacks +2',
     'zergmissileweaponslevel3': 'Missile Attacks +3',
@@ -219,3 +217,5 @@ zergUpgrades = {
     'nerualparasite': 'Nerual Parasite',
     'adaptivetalons': 'Adaptive Talons'
 }
+
+// 'nerualparasite': 'Nerual Parasite',
