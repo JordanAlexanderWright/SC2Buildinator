@@ -146,36 +146,48 @@ protossBuildings = {
     'fleetbeacon': 'Fleet Beacon'
 }
 
-zergUnits = {}
-zergBuildings = {}
-zergUpgrades = {
-    'researchzergmeleeweaponslevel1': 'Melee Attacks +1',
-    'researchzergmeleeweaponslevel2': 'Melee Attacks +2',
-    'researchzergmeleeweaponslevel3': 'Melee Attacks +3',
-    'researchzergmissileweaponslevel1': 'Missile Attacks +1',
-    'researchzergmissileweaponslevel2': 'Missile Weapons +2',
-    'researchzergmissileweaponslevel3': 'Missile Attacks +3',
-    'researchzerggroundarmorslevel1': 'Ground Carapace +1',
-    'researchzerggroundarmorslevel2': 'Ground Carapace +2',
-    'researchzerggroundarmorslevel3': 'Ground Carapace +3',
-    'upgradetolair': 'Lair',   
-    'upgradetohive': 'Hive',
-    'researchevolvegroovedspines': 'Grooved Spines',    
-    'researchevolvemuscularaugments': 'Muscular Augments',
-    'researchoverlordspeed': 'Overlord Speed',
-    'researchanabolicsynthesis': 'Anabolic Synthesis',    
-    'researchburrow': 'Burrow',
-    'researchdiggingclaws': 'Adaptive Talons',
-    'researchflyerweaponslevel1': 'Flyer Attacks +1',
-    'researchflyerweaponslevel2': 'Flyer Attacks +2',
-    'researchflyerweaponselevel3': 'Flyer Attacks +3',
-    'researchzergflyerarmorslevel1': 'Flyer Carapace +1',
-    'researchzergflyerarmorslevel2': 'Flyer Carapace +2',
-    'researchzergflyerarmorslevel3': 'Flyer Carapace +3',
+zergUnits = {
+    'drone': 'Drone',
+    'queen': 'Queen',
+    'zergling': 'Zergling',
+    'baneling': 'Baneling',
+    'roach': 'Roach',
+    'ravager': 'Ravager',
+    'hydralisk': 'Hydralisk',
+    'lurker': 'Lurker',
+    'infestor': 'Infestor',
+    'swarmhost': 'Swarm Host',
+    'ultralisk': 'Ultralisk',
+    'overlord': 'Overlord',
+    'overseer': 'Overseer',
+    'mutalisk': 'Mutalisk',
+    'corruptor': 'Corruptor',
+    'viper': 'Viper',
+    'broodlord': 'Broodlord',
+    'spinecrawler': 'Spine Crawler',
+    'sporecrawler': 'Spore Crawler',
+}
+
+zergBuildings = {
+    'hatchery': 'Hatchery',
+    'extractor': 'Extractor',
+    'spawningpool': 'Spawning Pool',
+    'evolutionchamber': 'Evolution Chamber',
+    'spinecrawler': 'Spine Crawler',
+    'sporecrawler': 'Spore Crawler',
+    'roachwarren': 'Roach Warren',
+    'banelingnest': 'Baneling Nest',
+    'lair': 'Lair',
+    'hydraliskden': 'Hydralisk Den',
+    'infestationpit': 'Infestation Pit',
+    'spire': 'Spire',
+    'nydusnetwork': 'Nydus Network', 
+    'hive': 'Hive',
+    'ultraliskcavern': 'Ultralisk Cavern',
 }
 
 zergUpgrades = {
-    'zerglingmovementspeed': 'Metabolic Boost',
+   
     'zergmeleeweaponslevel1': 'Melee Attacks +1',
     'zergmeleeweaponslevel2': 'Melee Attacks +2',
     'zergmeleeweaponslevel2': 'Melee Attacks +3',
@@ -191,5 +203,19 @@ zergUpgrades = {
     'zergflyerweaponslevel1': 'Flyer Attacks +1',
     'zergflyerweaponslevel2': 'Flyer Attacks +2',
     'zergflyerweaponslevel3': 'Flyer Attacks +3',
-   
+    'zerglingmovementspeed': 'Metabolic Boost',
+    'glialreconstitution': 'Glial reconstitution',
+    'evlovegroovedspines': 'Grooved Spines',
+    'infestorenergyupgrade': 'Pathogen Glands',
+    'overlordspeed': 'Pneumatized Carapzce',
+    'tunnelingclaws': 'Tunneling Claws',
+    'evolvemuscularaugments': 'Muscular Augments',
+    'zerglingattackspeed': 'Adrenal Glands',
+    'burrow': 'Burrow',
+    'lurkerrange': 'Seismic Spines',
+    'chitinousplating': 'Chitinous Plating',
+    'anabolicsynthesis': 'Anabolic Synthesis',
+    'centrifugalhooks': 'Centrifugal Hooks',   
+    'nerualparasite': 'Nerual Parasite',
+    'adaptivetalons': 'Adaptive Talons'
 }
