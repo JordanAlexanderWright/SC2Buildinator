@@ -1,5 +1,6 @@
 {
     "name": "Soule",
+    "race": "terran",
     "build": [
         [
             "SCV",
@@ -1245,7 +1246,7 @@
             "Marine",
             965,
             143
-        ],	
+        ],
         [
             "Marine",
             965,

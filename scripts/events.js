@@ -121,6 +121,7 @@ function importJson(){
 
 jsonButton.addEventListener('click', importJson);
 
+// This allows a user to see what units are available to them to build. Helps with manual input
 function showBuildItems(){
 
     if(document.querySelector('.buildItemDisplay')){
