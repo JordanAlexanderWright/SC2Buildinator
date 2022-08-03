@@ -15,7 +15,6 @@ document.getElementById('buildOrderTable').addEventListener('click', function(e)
 
 document.getElementById('formButton').addEventListener('click', figureTool.makeFormFigures);
 
-
 // Json input related events
 // Importing jsondata function
 
