@@ -181,7 +181,7 @@ class dataHandler{
        let supply = document.getElementById('supplySelector').value;
        let production = document.getElementById('objectSelector').value;
 
-       let parsedProduction = production.split(' ').join('');
+       let parsedProduction = production.split(' ').join('').toLowerCase();
 
        this.addTableData(parsedProduction, minutes, seconds, supply)
 
